@@ -1,0 +1,74 @@
+/* =========================
+   LARGE SCREEN STYLES
+   ========================= */
+
+@media screen and (min-width: 700px) {
+
+    /* HEADER */
+
+    header {
+        padding: 1rem 2rem;
+    }
+
+    #menu-button {
+        display: none;
+    }
+
+
+    /* NAVIGATION */
+
+    nav {
+        display: flex;
+        width: auto;
+        flex-direction: row;
+        margin-top: 0;
+    }
+
+    nav a {
+        border-top: none;
+        padding: 0.75rem 1.25rem;
+    }
+
+
+    /* MAIN */
+
+    main {
+        padding: 2rem;
+    }
+
+
+    /* ABOUT SECTION */
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        align-items: center;
+    }
+
+
+    /* COURSE BUTTONS */
+
+    .course-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .course-buttons button {
+        min-width: 150px;
+    }
+
+
+    /* COURSE CARDS */
+
+    .course-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 2rem;
+    }
+}
