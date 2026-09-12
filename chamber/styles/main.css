@@ -1,0 +1,48 @@
+
+/* =========================
+        MAIN / RESET
+   ========================= */
+
+/* Make width and height calculations easier */
+* {
+    box-sizing: border-box;
+}
+
+/* Remove default body margin */
+body {
+    margin: 0;
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Make form elements use the same font as the page */
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove default link underline */
+a {
+    text-decoration: none;
+}
+
+/* Improve heading spacing */
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+/* Make buttons easy to use */
+button {
+    cursor: pointer;
+}
+

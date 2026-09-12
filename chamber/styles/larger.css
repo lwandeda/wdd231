@@ -1,0 +1,86 @@
+/* =========================
+   LARGER SCREEN STYLES
+   ========================= */
+
+@media screen and (min-width: 700px) {
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    header {
+        padding: 1rem 2rem;
+    }
+
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    #menu-button {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        width: auto;
+        flex-direction: row;
+        margin-top: 0;
+    }
+
+    nav a {
+        border-top: none;
+        padding: 0.75rem 1rem;
+    }
+
+
+    /* =========================
+       MAIN
+       ========================= */
+
+    main {
+        padding: 2rem;
+    }
+
+
+    /* =========================
+       DIRECTORY
+       ========================= */
+
+    .member-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+
+    /* =========================
+       MEMBER CARDS
+       ========================= */
+
+    .member-card {
+        padding: 1.25rem;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+        padding: 2.5rem 2rem;
+    }
+}
+
+
+/* =========================
+   LARGE DESKTOP SCREENS
+   ========================= */
+
+@media screen and (min-width: 1000px) {
+
+    .member-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+}

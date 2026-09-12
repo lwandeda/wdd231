@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Baywest Mall",
+        "address": "Walker Drive, Gqeberha, Eastern Cape",
+        "phone": "+27 41 393 4000",
+        "website": "https://www.baywestmall.com/",
+        "image": "baywest.png",
+        "membership": 3
+    },
+    {
+        "name": "Walmer Park Shopping Centre",
+        "address": "6th Avenue, Walmer, Gqeberha",
+        "phone": "+27 41 581 2400",
+        "website": "https://www.walmerpark.co.za/",
+        "image": "walmer-pack.webp",
+        "membership": 3
+    },
+    {
+        "name": "Spar",
+        "address": "Main Road, Walmer, Gqeberha",
+        "phone": "+27 41 581 2000",
+        "website": "https://www.spar.co.za/",
+        "image": "spar.jpg",
+        "membership": 2
+    },
+    {
+        "name": "Pick n Pay",
+        "address": "Main Road, Walmer, Gqeberha",
+        "phone": "+27 41 581 3000",
+        "website": "https://www.pnp.co.za/",
+        "image": "pic-n-pay.jpg",
+        "membership": 2
+    },
+    {
+        "name": "NMB Technologies",
+        "address": "Gqeberha, Eastern Cape",
+        "phone": "+27 41 000 1000",
+        "website": "https://example.com/",
+        "image": "tech.jpg",
+        "membership": 1
+    },
+    {
+        "name": "Algoa FM",
+        "address": "Port Elizabeth, Eastern Cape",
+        "phone": "+27 41 505 9490",
+        "website": "https://www.algoafm.co.za/",
+        "image": "algoa.jpg",
+        "membership": 2
+    },
+    {
+        "name": "Nelson Mandela Bay Tourism",
+        "address": "Gqeberha, Eastern Cape",
+        "phone": "+27 41 581 0456",
+        "website": "https://www.nmbt.co.za/",
+        "image": "nelson-mandela.jpg",
+        "membership": 1
+    }
+]
