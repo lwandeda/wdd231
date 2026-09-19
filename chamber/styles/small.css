@@ -34,39 +34,52 @@ h3 {
 header {
     background-color: #12355b;
     color: white;
-    padding: 1rem;
+}
+
+.site-header {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
+
+    /* Allows navigation to move to next line */
     flex-wrap: wrap;
 }
 
 
 /* =========================
-   SITE BRANDING
+   BRAND
    ========================= */
 
-.site-branding {
+.brand {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+
+    color: white;
+    text-decoration: none;
 }
 
-.site-branding img {
+.brand img {
     width: 60px;
     height: 60px;
     object-fit: contain;
 }
 
-.site-name {
+.brand-name {
     display: block;
     font-size: 1.1rem;
-    font-weight: bold;
+    font-weight: 700;
 }
 
-.site-location {
+.brand-location {
     display: block;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 
@@ -78,15 +91,17 @@ header {
     background-color: transparent;
     border: 2px solid white;
     color: white;
+
     font-size: 1.5rem;
     padding: 0.3rem 0.6rem;
     border-radius: 4px;
+
     cursor: pointer;
 }
 
 #menu-button:hover,
 #menu-button:focus {
-    background-color: #ffffff;
+    background-color: white;
     color: #12355b;
 }
 
@@ -97,8 +112,10 @@ header {
 
 nav {
     display: none;
+
     width: 100%;
     flex-direction: column;
+
     margin-top: 1rem;
 }
 
@@ -108,9 +125,12 @@ nav.open {
 
 nav a {
     color: white;
+
     padding: 0.75rem;
     text-align: center;
+
     border-top: 1px solid rgba(255, 255, 255, 0.25);
+
     font-weight: 600;
 }
 
@@ -126,35 +146,7 @@ nav a.active {
 
 
 /* =========================
-   DIRECTORY CONTROLS
-   ========================= */
-
-.directory-controls {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-}
-
-.directory-controls button {
-    border: 2px solid #12355b;
-    background-color: white;
-    color: #12355b;
-    padding: 0.6rem 1rem;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.directory-controls button:hover,
-.directory-controls button:focus {
-    background-color: #12355b;
-    color: white;
-}
-
-
-/* =========================
-   MEMBER GRID
+   DIRECTORY
    ========================= */
 
 .member-grid {
@@ -163,14 +155,9 @@ nav a.active {
     gap: 1rem;
 }
 
-
-/* =========================
-   MEMBER CARD
-   ========================= */
-
 .member-card {
     background-color: white;
-    border: 1px solid #cccccc;
+    border: 1px solid #dddddd;
     border-radius: 8px;
     padding: 1rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
@@ -178,70 +165,20 @@ nav a.active {
 
 .member-card img {
     width: 100%;
-    height: 160px;
+    max-width: 180px;
+    height: 100px;
     object-fit: contain;
-    margin-bottom: 1rem;
-    background-color: #f1f1f1;
-    border-radius: 5px;
+    margin: 0 auto 1rem;
 }
 
-.member-card h2 {
+.member-card h2,
+.member-card h3 {
     color: #12355b;
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-
-.member-card p {
-    margin-bottom: 0.5rem;
 }
 
 .member-card a {
-    color: #0645ad;
+    color: #12355b;
     font-weight: bold;
-}
-
-.member-card a:hover,
-.member-card a:focus {
-    text-decoration: underline;
-}
-
-
-/* =========================
-   LIST VIEW
-   ========================= */
-
-.member-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-.member-list .member-card {
-    display: block;
-    border-radius: 0;
-    border-width: 0 0 1px 0;
-    box-shadow: none;
-    padding: 0.75rem;
-}
-
-.member-list .member-card:nth-child(even) {
-    background-color: #e9eef2;
-}
-
-
-/* List view must not display images */
-
-.member-list .member-card img {
-    display: none;
-}
-
-.member-list .member-card h2 {
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
-}
-
-.member-list .member-card p {
-    margin: 0.15rem 0;
 }
 
 
@@ -252,39 +189,247 @@ nav a.active {
 footer {
     background-color: #12355b;
     color: white;
-    text-align: center;
     padding: 2rem 1rem;
     margin-top: 2rem;
 }
 
-footer h2 {
-    font-size: 1.2rem;
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-footer p {
-    margin-bottom: 0.5rem;
-}
-
-.footer-contact {
-    margin-bottom: 1.5rem;
+footer a {
+    color: white;
 }
 
 .social-links {
     display: flex;
-    justify-content: center;
     gap: 1rem;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
 }
 
-.social-links a {
+
+/* =========================
+   W03 HOME PAGE
+   ========================= */
+
+.home-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+
+/* =========================
+   VISUALLY HIDDEN
+   ========================= */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+
+    left: 1rem;
+    right: 1rem;
+    bottom: 1.5rem;
+
+    background-color: rgba(18, 53, 91, 0.92);
     color: white;
+
+    padding: 1.25rem;
+    border-radius: 8px;
+}
+
+.hero-content h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.hero-content p {
+    margin-bottom: 1rem;
+}
+
+
+/* =========================
+   CTA BUTTON
+   ========================= */
+
+.cta-button {
+    display: inline-block;
+
+    background-color: white;
+    color: #12355b;
+
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+    background-color: #e8eef5;
+}
+
+
+/* =========================
+   EVENTS
+   ========================= */
+
+.events-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.event-card {
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.event-card h3 {
+    color: #12355b;
+}
+
+
+/* =========================
+   WEATHER
+   ========================= */
+
+.weather-container {
+    display: grid;
+    gap: 1rem;
+}
+
+.current-weather,
+.forecast {
+    background-color: #e8eef5;
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+#current-temperature {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #12355b;
+}
+
+#weather-description {
+    text-transform: capitalize;
+}
+
+
+/* =========================
+   WEATHER FORECAST
+   ========================= */
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.forecast-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.forecast-card h4 {
+    color: #12355b;
+}
+
+.forecast-temperature {
+    font-size: 1.5rem;
     font-weight: bold;
-    padding: 0.4rem;
 }
 
-.social-links a:hover,
-.social-links a:focus {
-    text-decoration: underline;
+
+/* =========================
+   BUSINESS SPOTLIGHTS
+   ========================= */
+
+.spotlight-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
+.spotlight-card {
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 1.25rem;
+
+    text-align: center;
+}
+
+.spotlight-card img {
+    width: 120px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 auto 1rem;
+}
+
+.spotlight-card h3 {
+    color: #12355b;
+}
+
+.membership-level {
+    font-weight: bold;
+    color: #1f5f8b;
+}
+
+.spotlight-card a {
+    color: #12355b;
+    font-weight: bold;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media screen and (max-width: 699px) {
+
+    .hero img {
+        min-height: 350px;
+    }
+
+    .hero-content {
+        position: absolute;
+    }
+
+}

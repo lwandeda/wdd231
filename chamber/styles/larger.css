@@ -12,6 +12,11 @@
         padding: 1rem 2rem;
     }
 
+    .site-header {
+        padding: 1rem;
+        flex-wrap: nowrap;
+    }
+
 
     /* =========================
        NAVIGATION
@@ -25,6 +30,8 @@
         display: flex;
         width: auto;
         flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
         margin-top: 0;
     }
 
@@ -52,13 +59,53 @@
         gap: 1.5rem;
     }
 
-
-    /* =========================
-       MEMBER CARDS
-       ========================= */
-
     .member-card {
         padding: 1.25rem;
+    }
+
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero-content {
+        left: 8%;
+        right: auto;
+        bottom: 10%;
+        max-width: 500px;
+        padding: 2rem;
+    }
+
+
+    /* =========================
+       EVENTS
+       ========================= */
+
+    .events-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    /* =========================
+       WEATHER
+       ========================= */
+
+    .weather-container {
+        grid-template-columns: 1fr 2fr;
+        align-items: stretch;
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    /* =========================
+       SPOTLIGHTS
+       ========================= */
+
+    .spotlight-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
 
@@ -69,11 +116,18 @@
     footer {
         padding: 2.5rem 2rem;
     }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
 }
 
 
 /* =========================
-   LARGE DESKTOP SCREENS
+   LARGE DESKTOP
    ========================= */
 
 @media screen and (min-width: 1000px) {

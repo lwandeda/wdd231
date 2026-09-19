@@ -72,3 +72,80 @@
         padding: 2rem;
     }
 }
+/* =========================================
+   W03 CHAMBER HOME PAGE - LARGE SCREENS
+   ========================================= */
+
+@media screen and (min-width: 700px) {
+
+    /* ---------- Header ---------- */
+
+    .site-header {
+        padding: 1rem;
+    }
+
+    #menu-button {
+        display: none;
+    }
+
+    #navigation {
+        display: flex;
+        width: auto;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    #navigation a {
+        border-bottom: none;
+        padding: 0.75rem 1rem;
+    }
+
+
+    /* ---------- Hero ---------- */
+
+    .hero-content {
+        left: 8%;
+        right: auto;
+        bottom: 10%;
+        max-width: 500px;
+        padding: 2rem;
+    }
+
+
+    /* ---------- Events ---------- */
+
+    .events-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    /* ---------- Weather ---------- */
+
+    .weather-container {
+        grid-template-columns: 1fr 2fr;
+        align-items: stretch;
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    /* ---------- Spotlights ---------- */
+
+    .spotlight-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    /* ---------- Footer ---------- */
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+
+}
