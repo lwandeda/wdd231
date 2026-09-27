@@ -1,0 +1,409 @@
+/* =========================================
+JOIN PAGE
+Qheberha Business Chamber
+========================================= */
+
+/* ---------- Page Introduction ---------- */
+
+.join-intro {
+max-width: 1200px;
+margin: 0 auto;
+padding: 2rem 1rem 1rem;
+}
+
+.join-intro h1 {
+margin-bottom: 0.75rem;
+}
+
+.join-intro p {
+max-width: 800px;
+line-height: 1.7;
+}
+
+/* ---------- Main Join Layout ---------- */
+
+.join-layout {
+max-width: 1200px;
+margin: 0 auto;
+padding: 1rem;
+}
+
+/* ---------- Form Section ---------- */
+
+.form-section {
+background-color: #ffffff;
+padding: 1.5rem;
+border-radius: 10px;
+border: 1px solid #d9dee5;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-section h2 {
+margin-top: 0;
+margin-bottom: 1.5rem;
+}
+
+/* ---------- Form ---------- */
+
+.membership-form {
+display: grid;
+gap: 1rem;
+}
+
+.membership-form > label {
+display: flex;
+flex-direction: column;
+gap: 0.4rem;
+font-weight: 700;
+}
+
+.membership-form input[type="text"],
+.membership-form input[type="email"],
+.membership-form input[type="tel"],
+.membership-form textarea {
+width: 100%;
+box-sizing: border-box;
+padding: 0.8rem;
+border: 1px solid #707070;
+border-radius: 5px;
+font: inherit;
+background-color: #ffffff;
+}
+
+.membership-form textarea {
+resize: vertical;
+min-height: 130px;
+}
+
+/* ---------- Focus States ---------- */
+
+.membership-form input:focus,
+.membership-form textarea:focus {
+outline: 3px solid #f2b134;
+outline-offset: 2px;
+}
+
+/* ---------- Membership Selection ---------- */
+
+.membership-form fieldset {
+border: 1px solid #707070;
+border-radius: 6px;
+padding: 1rem;
+margin: 0;
+}
+
+.membership-form legend {
+font-weight: 700;
+padding: 0 0.4rem;
+}
+
+.membership-option {
+display: flex;
+align-items: center;
+gap: 0.6rem;
+margin: 0.7rem 0;
+cursor: pointer;
+}
+
+.membership-option input {
+width: 1.1rem;
+height: 1.1rem;
+}
+
+/* ---------- Submit Button ---------- */
+
+.submit-button {
+width: 100%;
+padding: 0.9rem 1rem;
+border: none;
+border-radius: 6px;
+background-color: #12355b;
+color: #ffffff;
+font-size: 1rem;
+font-weight: 700;
+cursor: pointer;
+transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.submit-button:hover,
+.submit-button:focus {
+background-color: #0b2745;
+}
+
+.submit-button:focus {
+outline: 3px solid #f2b134;
+outline-offset: 2px;
+}
+
+/* =========================================
+MEMBERSHIP LEVEL CARDS
+========================================= */
+
+.membership-levels {
+display: grid;
+gap: 1rem;
+margin-top: 2rem;
+}
+
+.membership-levels > h2 {
+margin-bottom: 0;
+}
+
+/* ---------- Membership Card ---------- */
+
+.membership-card {
+background-color: #f4f6f8;
+border: 1px solid #12355b;
+border-radius: 10px;
+padding: 1.4rem;
+box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+
+
+/* Initial animation */
+opacity: 0;
+transform: translateY(25px);
+animation: membership-card-entry 0.7s ease forwards;
+
+
+}
+
+/* Stagger the four cards */
+
+.membership-card:nth-of-type(2) {
+animation-delay: 0.15s;
+}
+
+.membership-card:nth-of-type(3) {
+animation-delay: 0.3s;
+}
+
+.membership-card:nth-of-type(4) {
+animation-delay: 0.45s;
+}
+
+.membership-card:nth-of-type(5) {
+animation-delay: 0.6s;
+}
+
+/* ---------- Card Animation ---------- */
+
+@keyframes membership-card-entry {
+
+
+from {
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+}
+
+/* ---------- Card Text ---------- */
+
+.membership-card h3 {
+color: #12355b;
+margin-top: 0;
+}
+
+.membership-card p {
+line-height: 1.6;
+}
+
+/* ---------- Modal Button ---------- */
+
+.modal-button {
+display: inline-block;
+padding: 0.65rem 1rem;
+border: none;
+border-radius: 5px;
+background-color: #12355b;
+color: #ffffff;
+font-weight: 700;
+cursor: pointer;
+}
+
+.modal-button:hover,
+.modal-button:focus {
+background-color: #0b2745;
+}
+
+.modal-button:focus {
+outline: 3px solid #f2b134;
+outline-offset: 2px;
+}
+
+/* =========================================
+DIALOG MODALS
+========================================= */
+
+dialog {
+width: min(90%, 500px);
+border: none;
+border-radius: 10px;
+padding: 2rem;
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+dialog::backdrop {
+background-color: rgba(0, 0, 0, 0.65);
+}
+
+dialog h2 {
+color: #12355b;
+margin-top: 0;
+}
+
+dialog li {
+margin-bottom: 0.7rem;
+line-height: 1.5;
+}
+
+.close-modal {
+margin-top: 1rem;
+padding: 0.65rem 1rem;
+border: none;
+border-radius: 5px;
+background-color: #12355b;
+color: #ffffff;
+font-weight: 700;
+cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+background-color: #0b2745;
+}
+
+.close-modal:focus {
+outline: 3px solid #f2b134;
+outline-offset: 2px;
+}
+
+/* =========================================
+RESPONSIVE DESIGN
+========================================= */
+
+@media (min-width: 700px) {
+
+
+.join-intro {
+    padding-top: 2.5rem;
+}
+
+.join-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.membership-levels {
+    margin-top: 0;
+}
+
+.submit-button {
+    width: fit-content;
+    min-width: 250px;
+}
+
+
+}
+
+/* =========================================
+REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+
+.membership-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+}
+
+
+}
+/* Thank You Page */
+.thankyou-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #d9dee5;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.thankyou-section h1 {
+    color: #12355b;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.thankyou-section > p {
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.application-summary {
+    border-top: 2px solid #12355b;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.application-summary h2 {
+    color: #12355b;
+    margin-bottom: 1.5rem;
+}
+
+.information-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #d9dee5;
+}
+
+.information-row strong {
+    color: #12355b;
+}
+
+.home-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 1.2rem;
+    background-color: #12355b;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.home-button:hover,
+.home-button:focus {
+    background-color: #0b2745;
+}
+
+.home-button:focus {
+    outline: 3px solid #f2b134;
+    outline-offset: 2px;
+}
+
+/* Thank You Page - Mobile */
+@media (max-width: 699px) {
+    .thankyou-section {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .information-row {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+    }
+}
