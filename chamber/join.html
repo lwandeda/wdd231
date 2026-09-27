@@ -1,577 +1,481 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qheberha Business Chamber | Join</title>
 
-<title>Qheberha Business Chamber | Join</title>
+    <meta
+        name="description"
+        content="Apply to join the Qheberha Business Chamber and choose a membership level for your business or organization in Gqeberha."
+    >
 
-<meta
-    name="description"
-    content="Apply to join the Qheberha Business Chamber and choose a membership level for your business or organization in Gqeberha."
->
+    <meta name="author" content="Lwande Dana">
 
-<meta name="author" content="Lwande Dana">
+    <!-- Open Graph -->
+    <meta
+        property="og:title"
+        content="Qheberha Business Chamber | Join"
+    >
 
-<!-- Open Graph -->
-<meta property="og:title" content="Qheberha Business Chamber | Join">
-<meta
-    property="og:description"
-    content="Apply for membership with the Qheberha Business Chamber in Gqeberha."
->
-<meta
-    property="og:image"
-    content="https://lwandeda.github.io/wdd231/chamber/images/chamber-social-image.jpg"
->
-<meta
-    property="og:url"
-    content="https://lwandeda.github.io/wdd231/chamber/join.html"
->
-<meta property="og:type" content="website">
+    <meta
+        property="og:description"
+        content="Apply for membership with the Qheberha Business Chamber in Gqeberha."
+    >
 
-<link rel="icon" href="images/favicon.ico">
+    <meta
+        property="og:image"
+        content="https://lwandeda.github.io/wdd231/chamber/images/chamber-social-image.jpg"
+    >
 
-<!-- Existing site styles -->
-<link rel="stylesheet" href="styles/main.css">
-<link rel="stylesheet" href="styles/small.css">
-<link rel="stylesheet" href="styles/larger.css">
+    <meta
+        property="og:url"
+        content="https://lwandeda.github.io/wdd231/chamber/join.html"
+    >
 
-<!-- Join page styles -->
-<link rel="stylesheet" href="styles/join.css">
+    <meta property="og:type" content="website">
 
-<script src="scripts/navigation.js" defer></script>
-<script src="scripts/join.js" defer></script>
-```
+    <link rel="icon" href="images/favicon.ico">
 
+    <!-- Site styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- Join page styles -->
+    <link rel="stylesheet" href="styles/join.css">
+
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/join.js" defer></script>
 </head>
 
 <body>
 
-```
-<!-- =========================
-     HEADER
-========================== -->
+    <!-- HEADER -->
+    <header>
+        <div class="site-header">
 
-<header>
-
-    <div class="site-header">
-
-        <a href="index.html" class="brand">
-
-            <img
-                src="images/logo for web.png"
-                alt="Qheberha Business Chamber logo"
-                width="60"
-                height="60"
-            >
-
-            <div>
-                <span class="brand-name">
-                    Qheberha Business Chamber
-                </span>
-
-                <span class="brand-location">
-                    Gqeberha, South Africa
-                </span>
-            </div>
-
-        </a>
-
-        <button
-            id="menu-button"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-        >
-            ☰
-        </button>
-
-        <nav id="navigation">
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="directory.html">
-                Directory
-            </a>
-
-            <a class="active" href="join.html">
-                Join
-            </a>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-<!-- =========================
-     MAIN
-========================== -->
-
-<main>
-
-    <section class="join-intro">
-
-        <h1>
-            Join the Qheberha Business Chamber
-        </h1>
-
-        <p>
-            Become part of a growing business community in Gqeberha.
-            Complete the membership application below and select the
-            membership level that best suits your organization.
-        </p>
-
-    </section>
-
-
-    <div class="join-layout">
-
-        <!-- =========================
-             MEMBERSHIP FORM
-        ========================== -->
-
-        <section class="form-section">
-
-            <h2>
-                Membership Application
-            </h2>
-
-            <form
-                method="get"
-                action="thankyou.html"
-                class="membership-form"
-            >
-
-                <!-- First Name -->
-                <label for="first-name">
-                    First Name
-                    <input
-                        type="text"
-                        id="first-name"
-                        name="firstName"
-                        title="Enter your first name"
-                        autocomplete="given-name"
-                        required
-                    >
-                </label>
-
-
-                <!-- Last Name -->
-                <label for="last-name">
-                    Last Name
-                    <input
-                        type="text"
-                        id="last-name"
-                        name="lastName"
-                        title="Enter your last name"
-                        autocomplete="family-name"
-                        required
-                    >
-                </label>
-
-
-                <!-- Organizational Title -->
-                < for="organization-title">
-                    Organizational Title
-                    <input
-                      type="text"
-                      id="organization-title"
-                      name="organizationTitle"
-                      title="Enter your title within the organization"
-                      autocomplete="organization-title"
-                      pattern="[A-Za-z -]{7,}"
->
-                <!-- Email -->
-                <label for="email">
-                    Email Address
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        title="Enter your email address"
-                        autocomplete="email"
-                        placeholder="example@email.com"
-                        required
-                    >
-                </label>
-
-
-                <!-- Phone -->
-                <label for="phone">
-                    Mobile Phone Number
-                    <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        title="Enter your mobile phone number"
-                        autocomplete="tel"
-                        required
-                    >
-                </label>
-
-
-                <!-- Organization -->
-                <label for="organization">
-                    Business / Organization Name
-                    <input
-                        type="text"
-                        id="organization"
-                        name="organization"
-                        title="Enter your business or organization name"
-                        autocomplete="organization"
-                        required
-                    >
-                </label>
-
-
-                <!-- Membership Level -->
-                <fieldset>
-
-                    <legend>
-                        Membership Level
-                    </legend>
-
-                    <label class="membership-option">
-                        <input
-                            type="radio"
-                            name="membership"
-                            value="np"
-                            required
-                        >
-                        NP Membership
-                    </label>
-
-                    <label class="membership-option">
-                        <input
-                            type="radio"
-                            name="membership"
-                            value="bronze"
-                        >
-                        Bronze Membership
-                    </label>
-
-                    <label class="membership-option">
-                        <input
-                            type="radio"
-                            name="membership"
-                            value="silver"
-                        >
-                        Silver Membership
-                    </label>
-
-                    <label class="membership-option">
-                        <input
-                            type="radio"
-                            name="membership"
-                            value="gold"
-                        >
-                        Gold Membership
-                    </label>
-
-                </fieldset>
-
-
-                <!-- Organization Description -->
-                <label for="description">
-                    Business / Organization Description
-                    <textarea
-                        id="description"
-                        name="description"
-                        title="Describe your business or organization"
-                        rows="6"
-                    ></textarea>
-                </label>
-
-
-                <!-- Timestamp -->
-                <input
-                    type="hidden"
-                    id="timestamp"
-                    name="timestamp"
+            <a href="index.html" class="brand">
+                <img
+                    src="images/logo for web.png"
+                    alt="Qheberha Business Chamber logo"
+                    width="60"
+                    height="60"
                 >
 
+                <div>
+                    <span class="brand-name">
+                        Qheberha Business Chamber
+                    </span>
 
-                <!-- Submit -->
-                <input
-                    type="submit"
-                    value="Submit Membership Application"
-                    class="submit-button"
-                >
+                    <span class="brand-location">
+                        Gqeberha, South Africa
+                    </span>
+                </div>
+            </a>
 
-            </form>
+            <button
+                id="menu-button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
 
+            <nav id="navigation">
+                <a href="index.html">Home</a>
+                <a href="directory.html">Directory</a>
+                <a class="active" href="join.html">Join</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <section class="join-intro">
+            <h1>Join the Qheberha Business Chamber</h1>
+
+            <p>
+                Become part of a growing business community in Gqeberha.
+                Complete the membership application below and select the
+                membership level that best suits your organization.
+            </p>
         </section>
 
+        <div class="join-layout">
 
-        <!-- =========================
-             MEMBERSHIP LEVEL CARDS
-        ========================== -->
+            <!-- MEMBERSHIP FORM -->
+            <section class="form-section">
 
-        <aside class="membership-levels">
+                <h2>Membership Application</h2>
 
-            <h2>
-                Membership Levels
-            </h2>
-
-
-            <!-- NP -->
-            <article class="membership-card">
-
-                <h3>
-                    NP Membership
-                </h3>
-
-                <p>
-                    Free membership for nonprofit organizations.
-                </p>
-
-                <button
-                    type="button"
-                    class="modal-button"
-                    data-modal="np-modal"
+                <form
+                    method="get"
+                    action="thankyou.html"
+                    class="membership-form"
                 >
-                    View Benefits
-                </button>
 
-            </article>
+                    <!-- First Name -->
+                    <label for="first-name">
+                        First Name
+                        <input
+                            type="text"
+                            id="first-name"
+                            name="firstName"
+                            title="Enter your first name"
+                            autocomplete="given-name"
+                            required
+                        >
+                    </label>
 
+                    <!-- Last Name -->
+                    <label for="last-name">
+                        Last Name
+                        <input
+                            type="text"
+                            id="last-name"
+                            name="lastName"
+                            title="Enter your last name"
+                            autocomplete="family-name"
+                            required
+                        >
+                    </label>
 
-            <!-- Bronze -->
-            <article class="membership-card">
+                    <!-- Organizational Title -->
+                    <label for="organization-title">
+                        Organizational Title
+                        <input
+                            type="text"
+                            id="organization-title"
+                            name="organizationTitle"
+                            title="Enter your title within the organization"
+                            autocomplete="organization-title"
+                            pattern="[A-Za-z -]{7,}"
+                        >
+                    </label>
 
-                <h3>
-                    Bronze Membership
-                </h3>
+                    <!-- Email -->
+                    <label for="email">
+                        Email Address
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            title="Enter your email address"
+                            autocomplete="email"
+                            placeholder="example@email.com"
+                            required
+                        >
+                    </label>
 
-                <p>
-                    Entry-level membership for growing businesses.
-                </p>
+                    <!-- Phone -->
+                    <label for="phone">
+                        Mobile Phone Number
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            title="Enter your mobile phone number"
+                            autocomplete="tel"
+                            required
+                        >
+                    </label>
 
-                <button
-                    type="button"
-                    class="modal-button"
-                    data-modal="bronze-modal"
-                >
-                    View Benefits
-                </button>
+                    <!-- Organization -->
+                    <label for="organization">
+                        Business / Organization Name
+                        <input
+                            type="text"
+                            id="organization"
+                            name="organization"
+                            title="Enter your business or organization name"
+                            autocomplete="organization"
+                            required
+                        >
+                    </label>
 
-            </article>
+                    <!-- Membership Level -->
+                    <fieldset>
 
+                        <legend>Membership Level</legend>
 
-            <!-- Silver -->
-            <article class="membership-card">
+                        <label class="membership-option">
+                            <input
+                                type="radio"
+                                name="membership"
+                                value="np"
+                                required
+                            >
+                            NP Membership
+                        </label>
 
-                <h3>
-                    Silver Membership
-                </h3>
+                        <label class="membership-option">
+                            <input
+                                type="radio"
+                                name="membership"
+                                value="bronze"
+                            >
+                            Bronze Membership
+                        </label>
 
-                <p>
-                    Greater exposure and additional business benefits.
-                </p>
+                        <label class="membership-option">
+                            <input
+                                type="radio"
+                                name="membership"
+                                value="silver"
+                            >
+                            Silver Membership
+                        </label>
 
-                <button
-                    type="button"
-                    class="modal-button"
-                    data-modal="silver-modal"
-                >
-                    View Benefits
-                </button>
+                        <label class="membership-option">
+                            <input
+                                type="radio"
+                                name="membership"
+                                value="gold"
+                            >
+                            Gold Membership
+                        </label>
 
-            </article>
+                    </fieldset>
 
+                    <!-- Organization Description -->
+                    <label for="description">
+                        Business / Organization Description
 
-            <!-- Gold -->
-            <article class="membership-card">
+                        <textarea
+                            id="description"
+                            name="description"
+                            title="Describe your business or organization"
+                            rows="6"
+                        ></textarea>
+                    </label>
 
-                <h3>
-                    Gold Membership
-                </h3>
+                    <!-- Timestamp -->
+                    <input
+                        type="hidden"
+                        id="timestamp"
+                        name="timestamp"
+                    >
 
-                <p>
-                    Premium membership with maximum benefits.
-                </p>
+                    <!-- Submit -->
+                    <input
+                        type="submit"
+                        value="Submit Membership Application"
+                        class="submit-button"
+                    >
 
-                <button
-                    type="button"
-                    class="modal-button"
-                    data-modal="gold-modal"
-                >
-                    View Benefits
-                </button>
+                </form>
 
-            </article>
+            </section>
 
-        </aside>
+            <!-- MEMBERSHIP LEVEL CARDS -->
+            <aside class="membership-levels">
 
-    </div>
+                <h2>Membership Levels</h2>
 
+                <!-- NP -->
+                <article class="membership-card">
 
-    <!-- =========================
-         MEMBERSHIP MODALS
-    ========================== -->
+                    <h3>NP Membership</h3>
 
-    <dialog id="np-modal">
+                    <p>
+                        Free membership for nonprofit organizations.
+                    </p>
 
-        <h2>
-            NP Membership Benefits
-        </h2>
+                    <button
+                        type="button"
+                        class="modal-button"
+                        data-modal="np-modal"
+                    >
+                        View Benefits
+                    </button>
 
-        <ul>
-            <li>No membership fee</li>
-            <li>Access to selected chamber events</li>
-            <li>Business networking opportunities</li>
-            <li>Community support and resources</li>
-        </ul>
+                </article>
 
-        <button
-            type="button"
-            class="close-modal"
-        >
-            Close
-        </button>
+                <!-- Bronze -->
+                <article class="membership-card">
 
-    </dialog>
+                    <h3>Bronze Membership</h3>
 
+                    <p>
+                        Entry-level membership for growing businesses.
+                    </p>
 
-    <dialog id="bronze-modal">
+                    <button
+                        type="button"
+                        class="modal-button"
+                        data-modal="bronze-modal"
+                    >
+                        View Benefits
+                    </button>
 
-        <h2>
-            Bronze Membership Benefits
-        </h2>
+                </article>
 
-        <ul>
-            <li>Basic chamber membership</li>
-            <li>Networking opportunities</li>
-            <li>Access to selected training events</li>
-            <li>Business resources and support</li>
-        </ul>
+                <!-- Silver -->
+                <article class="membership-card">
 
-        <button
-            type="button"
-            class="close-modal"
-        >
-            Close
-        </button>
+                    <h3>Silver Membership</h3>
 
-    </dialog>
+                    <p>
+                        Greater exposure and additional business benefits.
+                    </p>
 
+                    <button
+                        type="button"
+                        class="modal-button"
+                        data-modal="silver-modal"
+                    >
+                        View Benefits
+                    </button>
 
-    <dialog id="silver-modal">
+                </article>
 
-        <h2>
-            Silver Membership Benefits
-        </h2>
+                <!-- Gold -->
+                <article class="membership-card">
 
-        <ul>
-            <li>All Bronze membership benefits</li>
-            <li>Discounts on selected chamber events</li>
-            <li>Additional business training opportunities</li>
-            <li>Increased business exposure</li>
-        </ul>
+                    <h3>Gold Membership</h3>
 
-        <button
-            type="button"
-            class="close-modal"
-        >
-            Close
-        </button>
+                    <p>
+                        Premium membership with maximum benefits.
+                    </p>
 
-    </dialog>
+                    <button
+                        type="button"
+                        class="modal-button"
+                        data-modal="gold-modal"
+                    >
+                        View Benefits
+                    </button>
 
+                </article>
 
-    <dialog id="gold-modal">
-
-        <h2>
-            Gold Membership Benefits
-        </h2>
-
-        <ul>
-            <li>All Silver membership benefits</li>
-            <li>Premium advertising opportunities</li>
-            <li>Business spotlight opportunities</li>
-            <li>Priority networking opportunities</li>
-            <li>Special chamber event benefits</li>
-        </ul>
-
-        <button
-            type="button"
-            class="close-modal"
-        >
-            Close
-        </button>
-
-    </dialog>
-
-</main>
-
-
-<!-- =========================
-     FOOTER
-========================== -->
-
-<footer>
-
-    <div class="footer-content">
-
-        <div>
-
-            <h2>
-                Qheberha Business Chamber
-            </h2>
-
-            <p>
-                Gqeberha, Eastern Cape
-            </p>
-
-            <p>
-                South Africa
-            </p>
+            </aside>
 
         </div>
 
+        <!-- MEMBERSHIP MODALS -->
 
-        <div class="social-links">
+        <dialog id="np-modal">
 
-            <a
-                href="#"
-                aria-label="Qheberha Business Chamber Facebook"
-            >
-                Facebook
-            </a>
+            <h2>NP Membership Benefits</h2>
 
-            <a
-                href="#"
-                aria-label="Qheberha Business Chamber LinkedIn"
-            >
-                LinkedIn
-            </a>
+            <ul>
+                <li>No membership fee</li>
+                <li>Access to selected chamber events</li>
+                <li>Business networking opportunities</li>
+                <li>Community support and resources</li>
+            </ul>
+
+            <button type="button" class="close-modal">
+                Close
+            </button>
+
+        </dialog>
+
+        <dialog id="bronze-modal">
+
+            <h2>Bronze Membership Benefits</h2>
+
+            <ul>
+                <li>Basic chamber membership</li>
+                <li>Networking opportunities</li>
+                <li>Access to selected training events</li>
+                <li>Business resources and support</li>
+            </ul>
+
+            <button type="button" class="close-modal">
+                Close
+            </button>
+
+        </dialog>
+
+        <dialog id="silver-modal">
+
+            <h2>Silver Membership Benefits</h2>
+
+            <ul>
+                <li>All Bronze membership benefits</li>
+                <li>Discounts on selected chamber events</li>
+                <li>Additional business training opportunities</li>
+                <li>Increased business exposure</li>
+            </ul>
+
+            <button type="button" class="close-modal">
+                Close
+            </button>
+
+        </dialog>
+
+        <dialog id="gold-modal">
+
+            <h2>Gold Membership Benefits</h2>
+
+            <ul>
+                <li>All Silver membership benefits</li>
+                <li>Premium advertising opportunities</li>
+                <li>Business spotlight opportunities</li>
+                <li>Priority networking opportunities</li>
+                <li>Special chamber event benefits</li>
+            </ul>
+
+            <button type="button" class="close-modal">
+                Close
+            </button>
+
+        </dialog>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h2>Qheberha Business Chamber</h2>
+
+                <p>Gqeberha, Eastern Cape</p>
+
+                <p>South Africa</p>
+
+            </div>
+
+            <div class="social-links">
+
+                <a
+                    href="#"
+                    aria-label="Qheberha Business Chamber Facebook"
+                >
+                    Facebook
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Qheberha Business Chamber LinkedIn"
+                >
+                    LinkedIn
+                </a>
+
+            </div>
 
         </div>
 
-    </div>
+        <p>
+            &copy;
+            <span id="currentyear"></span>
+            Lwande Dana
+        </p>
 
+        <p>WDD231 Chamber Project</p>
 
-    <p>
-        &copy;
-        <span id="currentyear"></span>
-        Lwande Dana
-    </p>
+        <p id="lastModified"></p>
 
-    <p>
-        WDD231 Chamber Project
-    </p>
-
-    <p id="lastModified"></p>
-
-</footer>
-```
+    </footer>
 
 </body>
 
