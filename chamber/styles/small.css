@@ -433,3 +433,71 @@ footer a {
     }
 
 }
+/* =========================================
+   MOBILE HEADER
+========================================= */
+
+header {
+    padding: 0.6rem 1rem;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-link img {
+    width: 50px;
+    height: 50px;
+}
+
+.site-title {
+    margin-right: auto;
+    margin-left: 0.75rem;
+}
+
+.site-title h1 {
+    font-size: 1.1rem;
+}
+
+.site-title p {
+    font-size: 0.7rem;
+}
+
+/* Hamburger */
+
+#menu-button {
+    display: block;
+
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    color: white;
+
+    font-size: 1.5rem;
+
+    padding: 0.3rem 0.55rem;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+/* Navigation hidden initially */
+
+nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+nav.open {
+    display: flex;
+}
+
+nav a {
+    width: 100%;
+    padding: 0.7rem 1rem;
+}

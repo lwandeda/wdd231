@@ -1,151 +1,92 @@
-/* =========================
-   LARGE SCREEN STYLES
-   ========================= */
-
-@media screen and (min-width: 700px) {
-
-    /* HEADER */
-
-    header {
-        padding: 1rem 2rem;
-    }
-
-    #menu-button {
-        display: none;
-    }
-
-
-    /* NAVIGATION */
-
-    nav {
-        display: flex;
-        width: auto;
-        flex-direction: row;
-        margin-top: 0;
-    }
-
-    nav a {
-        border-top: none;
-        padding: 0.75rem 1.25rem;
-    }
-
-
-    /* MAIN */
-
-    main {
-        padding: 2rem;
-    }
-
-
-    /* ABOUT SECTION */
-
-    .about-content {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 2rem;
-        align-items: center;
-    }
-
-
-    /* COURSE BUTTONS */
-
-    .course-buttons {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .course-buttons button {
-        min-width: 150px;
-    }
-
-
-    /* COURSE CARDS */
-
-    .course-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-
-    /* FOOTER */
-
-    footer {
-        padding: 2rem;
-    }
-}
 /* =========================================
-   W03 CHAMBER HOME PAGE - LARGE SCREENS
-   ========================================= */
+   PROFESSIONAL HEADER
+========================================= */
 
-@media screen and (min-width: 700px) {
+header {
+    background-color: #12355b;
+    color: white;
+    padding: 0.6rem 2rem;
+}
 
-    /* ---------- Header ---------- */
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
 
-    .site-header {
-        padding: 1rem;
-    }
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 
-    #menu-button {
-        display: none;
-    }
+/* Logo */
 
-    #navigation {
-        display: flex;
-        width: auto;
-        flex-direction: row;
-        align-items: center;
-        gap: 0.5rem;
-    }
+.logo-link {
+    display: flex;
+    align-items: center;
+}
 
-    #navigation a {
-        border-bottom: none;
-        padding: 0.75rem 1rem;
-    }
+.logo-link img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
 
+/* Chamber name */
 
-    /* ---------- Hero ---------- */
+.site-title {
+    margin-right: auto;
+}
 
-    .hero-content {
-        left: 8%;
-        right: auto;
-        bottom: 10%;
-        max-width: 500px;
-        padding: 2rem;
-    }
+.site-title h1 {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.2;
+}
 
+.site-title p {
+    margin: 0.15rem 0 0;
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
 
-    /* ---------- Events ---------- */
+/* Navigation */
 
-    .events-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
 
+nav a {
+    display: block;
 
-    /* ---------- Weather ---------- */
+    padding: 0.65rem 0.85rem;
 
-    .weather-container {
-        grid-template-columns: 1fr 2fr;
-        align-items: stretch;
-    }
+    color: white;
+    text-decoration: none;
 
-    .forecast-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    font-size: 0.95rem;
+    font-weight: 600;
 
+    border-radius: 4px;
 
-    /* ---------- Spotlights ---------- */
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
 
-    .spotlight-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+nav a:hover,
+nav a:focus {
+    background-color: #1f6696;
+    color: white;
+}
 
+nav a.active {
+    background-color: #2877a8;
+    color: white;
+}
 
-    /* ---------- Footer ---------- */
+/* Hide hamburger on desktop */
 
-    .footer-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2rem;
-    }
-
+#menu-button {
+    display: none;
 }

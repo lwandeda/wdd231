@@ -1,3 +1,4 @@
+
 /* =========================
    LARGER SCREEN STYLES
    ========================= */
@@ -5,44 +6,220 @@
 @media screen and (min-width: 700px) {
 
     /* =========================
-       HEADER
+       HEADER - BOTH STRUCTURES
        ========================= */
 
     header {
-        padding: 1rem 2rem;
+        background-color: #12355b;
+        color: white;
+        padding: 0;
     }
 
+    /* JOIN / STANDARD HEADER */
     .site-header {
-        padding: 1rem;
+        width: 100%;
+        max-width: 1200px;
+        min-height: 76px;
+        margin: 0 auto;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
         flex-wrap: nowrap;
+        box-sizing: border-box;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: white;
+        text-decoration: none;
+        flex-shrink: 0;
+    }
+
+    .brand img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    .brand-name {
+        display: block;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .brand-location {
+        display: block;
+        margin-top: 0.15rem;
+        color: #dbeaf5;
+        font-size: 0.75rem;
+    }
+
+    /* JOIN NAVIGATION */
+    #navigation {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        margin: 0 0 0 auto;
+        gap: 0.25rem;
+    }
+
+    #navigation a {
+        position: relative;
+        display: block;
+        width: auto;
+        padding: 0.7rem 0.9rem;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border-radius: 5px;
+        border-top: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    #navigation a:hover,
+    #navigation a:focus-visible {
+        background-color: #1d4f78;
+        color: white;
+    }
+
+    #navigation a.active {
+        background-color: #1d6b9e;
+        color: white;
     }
 
 
     /* =========================
-       NAVIGATION
+       DISCOVER / OTHER PAGES
+       ========================= */
+
+    .header-content {
+        width: 100%;
+        max-width: 1200px;
+        min-height: 76px;
+        margin: 0 auto;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: nowrap;
+        box-sizing: border-box;
+    }
+
+    .logo-link {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .logo-link img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+    }
+
+    .site-title {
+        margin-left: 0.75rem;
+        margin-right: auto;
+        color: white;
+    }
+
+    .site-title h1 {
+        margin: 0;
+        color: white;
+        font-size: 1.1rem;
+        line-height: 1.2;
+    }
+
+    .site-title p {
+        margin: 0.15rem 0 0;
+        color: #dbeaf5;
+        font-size: 0.75rem;
+    }
+
+    /* DISCOVER NAVIGATION */
+    #main-nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        margin: 0 0 0 auto;
+        gap: 0.25rem;
+    }
+
+    #main-nav a {
+        position: relative;
+        display: block;
+        width: auto;
+        padding: 0.7rem 0.9rem;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border-radius: 5px;
+        border-top: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    #main-nav a:hover,
+    #main-nav a:focus-visible {
+        background-color: #1d4f78;
+        color: white;
+    }
+
+    #main-nav a.active {
+        background-color: #1d6b9e;
+        color: white;
+    }
+
+
+    /* =========================
+       NAVIGATION UNDERLINE
+       ========================= */
+
+    #navigation a::after,
+    #main-nav a::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 4px;
+        width: 0;
+        height: 2px;
+        background-color: #4da3d9;
+        transform: translateX(-50%);
+        transition: width 0.3s ease;
+    }
+
+    #navigation a:hover::after,
+    #navigation a:focus-visible::after,
+    #navigation a.active::after,
+    #main-nav a:hover::after,
+    #main-nav a:focus-visible::after,
+    #main-nav a.active::after {
+        width: 60%;
+    }
+
+
+    /* =========================
+       MOBILE MENU BUTTON
        ========================= */
 
     #menu-button {
         display: none;
     }
 
-    nav {
-        display: flex;
-        width: auto;
-        flex-direction: row;
-        align-items: center;
-        gap: 0.5rem;
-        margin-top: 0;
-    }
-
-    nav a {
-        border-top: none;
-        padding: 0.75rem 1rem;
-    }
-
 
     /* =========================
-       MAIN
+       MAIN CONTENT
        ========================= */
 
     main {
@@ -51,7 +228,7 @@
 
 
     /* =========================
-       DIRECTORY
+       MEMBER GRID
        ========================= */
 
     .member-grid {
@@ -65,7 +242,7 @@
 
 
     /* =========================
-       HERO
+       HOME PAGE
        ========================= */
 
     .hero-content {
@@ -76,19 +253,9 @@
         padding: 2rem;
     }
 
-
-    /* =========================
-       EVENTS
-       ========================= */
-
     .events-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-
-
-    /* =========================
-       WEATHER
-       ========================= */
 
     .weather-container {
         grid-template-columns: 1fr 2fr;
@@ -98,11 +265,6 @@
     .forecast-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-
-
-    /* =========================
-       SPOTLIGHTS
-       ========================= */
 
     .spotlight-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -127,7 +289,7 @@
 
 
 /* =========================
-   LARGE DESKTOP
+   VERY LARGE SCREENS
    ========================= */
 
 @media screen and (min-width: 1000px) {
@@ -137,4 +299,14 @@
         gap: 1.5rem;
     }
 
+    #navigation,
+    #main-nav {
+        gap: 0.35rem;
+    }
+
+    #navigation a,
+    #main-nav a {
+        padding: 0.7rem 1rem;
+    }
 }
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Discover Gqeberha | Qheberha Business Chamber</title>
+
+    <meta
+        name="description"
+        content="Discover attractions, heritage sites, nature reserves and other points of interest in Gqeberha, South Africa."
+    >
+
+    <meta name="author" content="Lwande Dana">
+
+    <meta
+        property="og:title"
+        content="Discover Gqeberha | Qheberha Business Chamber"
+    >
+
+    <meta
+        property="og:description"
+        content="Explore points of interest, attractions and natural areas around Gqeberha."
+    >
+
+    <meta
+        property="og:image"
+        content="images/chamber-social-image.jpg"
+    >
+
+    <meta
+        property="og:url"
+        content="https://lwandeda.github.io/wdd231/chamber/discover.html"
+    >
+
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/discover.css">
+
+    <script
+        type="module"
+        src="scripts/discover.js"
+        defer>
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+
+            <a href="index.html" class="logo-link">
+                <img
+                    src="images/logo for web.png"
+                    alt="Qheberha Business Chamber logo"
+                    width="80"
+                    height="80"
+                >
+            </a>
+
+            <div class="site-title">
+                <h1>Qheberha</h1>
+                <p>Business Chamber</p>
+            </div>
+
+            <button
+                id="menu-button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+        </div>
+
+        <nav id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="directory.html">Directory</a>
+            <a href="join.html">Join</a>
+            <a href="discover.html" class="active">Discover</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="discover-heading">
+            <h2>Discover Gqeberha</h2>
+
+            <p>
+                Explore the places, attractions, heritage and natural beauty
+                that make Gqeberha an important destination in the Eastern Cape.
+            </p>
+        </section>
+
+        <section
+            id="visitor-message"
+            class="visitor-message"
+            aria-live="polite"
+        ></section>
+
+        <section
+            id="discover-grid"
+            class="discover-grid"
+            aria-label="Gqeberha points of interest"
+        >
+            <!-- Cards are created with JavaScript -->
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+
+            <div>
+                <h2>Qheberha Business Chamber</h2>
+                <p>Supporting businesses in Gqeberha.</p>
+            </div>
+
+            <div>
+                <p>Gqeberha, Eastern Cape</p>
+                <p>South Africa</p>
+            </div>
+
+            <div>
+                <p>&copy; <span id="current-year"></span> Qheberha Business Chamber</p>
+                <p>Lwande Dana</p>
+                <p>WDD231</p>
+                <p id="last-modified"></p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
