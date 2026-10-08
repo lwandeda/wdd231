@@ -1,0 +1,684 @@
+/* =========================================================
+GQEBERHA FITNESS & WELLNESS CENTER
+Main Stylesheet
+Mobile-First Design
+========================================================= */
+
+/* =========================================================
+
+1. CSS VARIABLES
+   Centralized colors make the design easier to maintain.
+   ========================================================= */
+
+:root {
+--dark-blue: #0D3B66;
+--teal: #00897B;
+--light-gray: #F4F6F8;
+--white: #FFFFFF;
+--dark-text: #1F2933;
+--gray-text: #52606D;
+--border-color: #D9E2EC;
+
+
+--heading-font: "Poppins", sans-serif;
+--body-font: "Open Sans", sans-serif;
+
+--max-width: 1200px;
+
+
+}
+
+/* =========================================================
+2. RESET / BASE STYLES
+These rules create a consistent starting point across
+different browsers.
+========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: var(--body-font);
+color: var(--dark-text);
+background-color: var(--white);
+line-height: 1.6;
+}
+
+img {
+display: block;
+max-width: 100%;
+height: auto;
+}
+
+a {
+color: inherit;
+}
+
+ul {
+list-style: none;
+}
+
+/* =========================================================
+3. ACCESSIBILITY
+Skip link allows keyboard users to jump directly to
+the main content.
+========================================================= */
+
+.skip-link {
+position: absolute;
+left: -9999px;
+top: auto;
+z-index: 9999;
+background-color: var(--dark-blue);
+color: var(--white);
+padding: 0.75rem 1rem;
+text-decoration: none;
+}
+
+.skip-link:focus {
+left: 1rem;
+top: 1rem;
+}
+
+/* =========================================================
+4. GENERAL CONTAINERS
+Keeps content from becoming too wide on large screens.
+========================================================= */
+
+.section-container,
+.header-container,
+.footer-container {
+width: min(92%, var(--max-width));
+margin: 0 auto;
+}
+
+.section {
+padding: 4rem 0;
+}
+
+/* =========================================================
+5. TYPOGRAPHY
+Poppins = headings
+Open Sans = body text
+========================================================= */
+
+h1,
+h2,
+h3,
+h4 {
+font-family: var(--heading-font);
+line-height: 1.2;
+color: var(--dark-blue);
+}
+
+h1 {
+font-size: 2.3rem;
+}
+
+h2 {
+font-size: 1.9rem;
+}
+
+h3 {
+font-size: 1.3rem;
+}
+
+p {
+margin-bottom: 1rem;
+}
+
+.section-heading {
+max-width: 700px;
+margin-bottom: 2rem;
+}
+
+.section-label {
+color: var(--teal);
+font-family: var(--heading-font);
+font-size: 0.85rem;
+font-weight: 700;
+letter-spacing: 0.08em;
+margin-bottom: 0.5rem;
+}
+
+.section-heading h2 {
+margin-bottom: 1rem;
+}
+
+.section-heading p:last-child {
+color: var(--gray-text);
+}
+
+/* =========================================================
+6. HEADER
+Mobile layout:
+Logo + menu button
+Navigation is controlled by JavaScript.
+========================================================= */
+
+.site-header {
+background-color: var(--white);
+border-bottom: 1px solid var(--border-color);
+position: sticky;
+top: 0;
+z-index: 1000;
+}
+
+.header-container {
+min-height: 76px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 1rem;
+}
+
+.logo {
+display: flex;
+flex-direction: column;
+color: var(--dark-blue);
+font-family: var(--heading-font);
+font-size: 1rem;
+font-weight: 700;
+line-height: 1.1;
+text-decoration: none;
+}
+
+.logo span:last-child {
+color: var(--teal);
+}
+
+/* =========================================================
+7. MOBILE MENU BUTTON
+========================================================= */
+
+.menu-button {
+border: 0;
+background-color: transparent;
+color: var(--dark-blue);
+font-size: 1.8rem;
+cursor: pointer;
+padding: 0.4rem;
+line-height: 1;
+}
+
+.menu-button:hover,
+.menu-button:focus {
+color: var(--teal);
+}
+
+.menu-button:focus-visible,
+a:focus-visible,
+button:focus-visible {
+outline: 3px solid var(--teal);
+outline-offset: 3px;
+}
+
+/* =========================================================
+8. NAVIGATION
+The JavaScript will add/remove the "open" class.
+========================================================= */
+
+.navigation {
+display: none;
+position: absolute;
+left: 0;
+right: 0;
+top: 76px;
+background-color: var(--white);
+border-bottom: 1px solid var(--border-color);
+box-shadow: 0 4px 10px rgb(0 0 0 / 8%);
+}
+
+.navigation.open {
+display: block;
+}
+
+.navigation ul {
+display: flex;
+flex-direction: column;
+}
+
+.navigation a {
+display: block;
+padding: 1rem 1.5rem;
+color: var(--dark-blue);
+font-family: var(--heading-font);
+font-weight: 600;
+text-decoration: none;
+border-bottom: 1px solid var(--border-color);
+}
+
+.navigation a:hover,
+.navigation a:focus {
+background-color: var(--light-gray);
+color: var(--teal);
+}
+
+.navigation a[aria-current="page"] {
+color: var(--teal);
+}
+
+/* =========================================================
+9. HERO SECTION
+Designed to be visually strong on mobile first.
+========================================================= */
+
+.hero {
+min-height: 600px;
+display: flex;
+align-items: center;
+background:
+linear-gradient(
+rgb(13 59 102 / 82%),
+rgb(13 59 102 / 82%)
+),
+url("../images/fitness-hero.jpg") center / cover no-repeat;
+color: var(--white);
+}
+
+.hero-content {
+width: min(92%, var(--max-width));
+margin: 0 auto;
+padding: 5rem 0;
+}
+
+.hero-tagline {
+color: var(--white);
+font-family: var(--heading-font);
+font-size: 0.8rem;
+font-weight: 600;
+letter-spacing: 0.1em;
+margin-bottom: 1rem;
+}
+
+.hero h1 {
+max-width: 700px;
+color: var(--white);
+font-size: 2.5rem;
+margin-bottom: 1.5rem;
+}
+
+.hero h1 span {
+color: #80CBC4;
+display: block;
+}
+
+.hero p:not(.hero-tagline) {
+max-width: 650px;
+color: var(--white);
+font-size: 1rem;
+margin-bottom: 2rem;
+}
+
+/* =========================================================
+10. BUTTONS
+Teal is used as the main action color.
+========================================================= */
+
+.button {
+display: inline-block;
+background-color: var(--teal);
+color: var(--white);
+padding: 0.85rem 1.4rem;
+border: 2px solid var(--teal);
+border-radius: 6px;
+font-family: var(--heading-font);
+font-size: 0.95rem;
+font-weight: 600;
+text-decoration: none;
+transition:
+background-color 0.2s ease,
+transform 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+background-color: var(--dark-blue);
+border-color: var(--dark-blue);
+transform: translateY(-2px);
+}
+
+.button-light {
+background-color: var(--white);
+color: var(--dark-blue);
+border-color: var(--white);
+}
+
+.button-light:hover,
+.button-light:focus {
+background-color: var(--light-gray);
+border-color: var(--light-gray);
+}
+
+/* =========================================================
+11. ABOUT SECTION
+========================================================= */
+
+.about {
+background-color: var(--white);
+}
+
+.about-content {
+max-width: 850px;
+}
+
+.about-content p {
+color: var(--gray-text);
+}
+
+/* =========================================================
+12. PROGRAMS SECTION
+========================================================= */
+
+.programs {
+background-color: var(--light-gray);
+}
+
+.program-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1.5rem;
+}
+
+.program-card {
+background-color: var(--white);
+padding: 1.75rem;
+border-radius: 10px;
+border: 1px solid var(--border-color);
+box-shadow: 0 3px 12px rgb(13 59 102 / 8%);
+}
+
+.program-card h3 {
+margin-bottom: 0.75rem;
+}
+
+.program-card p {
+color: var(--gray-text);
+margin-bottom: 1rem;
+}
+
+.program-card a {
+color: var(--teal);
+font-family: var(--heading-font);
+font-weight: 600;
+text-decoration: none;
+}
+
+.program-card a:hover,
+.program-card a:focus {
+text-decoration: underline;
+}
+
+.card-icon {
+width: 48px;
+height: 48px;
+display: grid;
+place-items: center;
+margin-bottom: 1rem;
+border-radius: 50%;
+background-color: var(--dark-blue);
+color: var(--white);
+font-family: var(--heading-font);
+font-size: 1.4rem;
+font-weight: 700;
+}
+
+/* =========================================================
+13. WELLNESS SECTION
+========================================================= */
+
+.wellness {
+background-color: var(--white);
+}
+
+.wellness-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1.5rem;
+}
+
+.wellness-card {
+padding: 1.5rem;
+border-left: 4px solid var(--teal);
+background-color: var(--light-gray);
+}
+
+.wellness-card h3 {
+margin-bottom: 0.75rem;
+}
+
+.wellness-card p {
+color: var(--gray-text);
+margin-bottom: 0;
+}
+
+/* =========================================================
+14. MEMBERSHIP CALL-TO-ACTION
+========================================================= */
+
+.membership-cta {
+padding: 4rem 0;
+background-color: var(--dark-blue);
+text-align: center;
+}
+
+.membership-cta h2 {
+color: var(--white);
+margin-bottom: 1rem;
+}
+
+.membership-cta p {
+max-width: 650px;
+margin: 0 auto 1.5rem;
+color: var(--white);
+}
+
+/* =========================================================
+15. FOOTER
+========================================================= */
+
+.site-footer {
+background-color: #092A49;
+color: var(--white);
+padding-top: 3rem;
+}
+
+.footer-container {
+display: grid;
+grid-template-columns: 1fr;
+gap: 2rem;
+padding-bottom: 2rem;
+}
+
+.site-footer h2,
+.site-footer h3 {
+color: var(--white);
+margin-bottom: 0.75rem;
+}
+
+.footer-about p {
+max-width: 450px;
+}
+
+.footer-links a {
+color: var(--white);
+text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+color: #80CBC4;
+text-decoration: underline;
+}
+
+.footer-links li {
+margin-bottom: 0.5rem;
+}
+
+.footer-contact address {
+font-style: normal;
+line-height: 1.8;
+}
+
+.footer-bottom {
+border-top: 1px solid rgb(255 255 255 / 20%);
+width: min(92%, var(--max-width));
+margin: 0 auto;
+padding: 1.5rem 0;
+display: flex;
+flex-direction: column;
+gap: 0.5rem;
+}
+
+.footer-bottom p {
+margin-bottom: 0;
+font-size: 0.9rem;
+}
+
+.footer-bottom a {
+color: var(--white);
+}
+
+.footer-bottom a:hover,
+.footer-bottom a:focus {
+color: #80CBC4;
+}
+
+/* =========================================================
+16. MEDIUM SCREENS
+Tablets and smaller laptops.
+========================================================= */
+
+@media screen and (min-width: 600px) {
+
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+.hero {
+    min-height: 650px;
+}
+
+.program-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.wellness-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.footer-container {
+    grid-template-columns: 2fr 1fr;
+}
+
+
+}
+
+/* =========================================================
+17. LARGE SCREENS
+Desktop navigation and multi-column layouts.
+========================================================= */
+
+@media screen and (min-width: 900px) {
+
+
+.menu-button {
+    display: none;
+}
+
+.navigation {
+    display: block;
+    position: static;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+}
+
+.navigation ul {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navigation a {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 3px solid transparent;
+}
+
+.navigation a:hover,
+.navigation a:focus {
+    background-color: transparent;
+    color: var(--teal);
+    border-bottom-color: var(--teal);
+}
+
+.navigation a[aria-current="page"] {
+    border-bottom-color: var(--teal);
+}
+
+.hero-content {
+    padding: 7rem 0;
+}
+
+.hero h1 {
+    font-size: 4rem;
+}
+
+.hero p:not(.hero-tagline) {
+    font-size: 1.1rem;
+}
+
+.program-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.wellness-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.footer-container {
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+}
+
+/* =========================================================
+18. REDUCED MOTION
+Helps users who prefer less animation.
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+
+html {
+    scroll-behavior: auto;
+}
+
+*,
+*::before,
+*::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+}
+
+}
