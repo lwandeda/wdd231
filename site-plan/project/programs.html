@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fitness Programs | Gqeberha Fitness &amp; Wellness Center</title>
+
+    <meta
+        name="description"
+        content="Explore fitness programs at Gqeberha Fitness & Wellness Center, including strength training, cardio, group fitness, and flexibility sessions."
+    >
+
+    <meta name="author" content="Lwande Dana">
+
+    <meta property="og:title" content="Fitness Programs | Gqeberha Fitness & Wellness Center">
+    <meta
+        property="og:description"
+        content="Find a fitness program that supports your goals at Gqeberha Fitness & Wellness Center."
+    >
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Gqeberha Fitness and Wellness Center home">
+            <span class="brand-name">Gqeberha</span>
+            <span class="brand-subtitle">Fitness &amp; Wellness Center</span>
+        </a>
+
+        <button
+            id="menu-button"
+            class="menu-button"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="navigation"
+        >
+            ☰
+        </button>
+
+        <nav id="navigation" class="navigation" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="programs.html" aria-current="page">Programs</a>
+            <a href="membership.html">Membership</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <p class="eyebrow">MOVE WITH PURPOSE</p>
+                <h1>Find Your Fitness Program</h1>
+                <p>
+                    Whether you are starting your fitness journey or building
+                    on your progress, discover activities that help you move,
+                    grow stronger, and feel better.
+                </p>
+                <a class="button button-primary" href="membership.html">
+                    Explore Membership
+                </a>
+            </div>
+        </section>
+
+        <section class="programs-section section-container">
+            <div class="section-heading">
+                <p class="eyebrow">OUR PROGRAMS</p>
+                <h2>Something for Every Fitness Goal</h2>
+                <p>
+                    Explore our program options and choose an activity that
+                    matches your interests and fitness level.
+                </p>
+            </div>
+
+            <div class="program-filters" aria-label="Filter fitness programs">
+                <button
+                    class="filter-button active"
+                    type="button"
+                    data-filter="all"
+                    aria-pressed="true"
+                >
+                    All Programs
+                </button>
+
+                <button
+                    class="filter-button"
+                    type="button"
+                    data-filter="strength"
+                    aria-pressed="false"
+                >
+                    Strength
+                </button>
+
+                <button
+                    class="filter-button"
+                    type="button"
+                    data-filter="cardio"
+                    aria-pressed="false"
+                >
+                    Cardio
+                </button>
+
+                <button
+                    class="filter-button"
+                    type="button"
+                    data-filter="group"
+                    aria-pressed="false"
+                >
+                    Group Fitness
+                </button>
+
+                <button
+                    class="filter-button"
+                    type="button"
+                    data-filter="wellness"
+                    aria-pressed="false"
+                >
+                    Wellness
+                </button>
+            </div>
+
+            <p id="program-count" class="program-count" aria-live="polite">
+                Showing all 6 programs
+            </p>
+
+            <div id="program-list" class="program-grid">
+                <article class="program-card" data-category="strength">
+                    <div class="program-card-content">
+                        <span class="program-category">STRENGTH</span>
+                        <h3>Strength Training</h3>
+                        <p>
+                            Build strength and improve muscular endurance
+                            through resistance exercises and guided workouts.
+                        </p>
+                        <p class="program-detail">
+                            <strong>Suitable for:</strong> Beginners and experienced members
+                        </p>
+                    </div>
+                </article>
+
+                <article class="program-card" data-category="cardio">
+                    <div class="program-card-content">
+                        <span class="program-category">CARDIO</span>
+                        <h3>Cardio Fitness</h3>
+                        <p>
+                            Improve cardiovascular endurance with energetic
+                            workouts designed to get your body moving.
+                        </p>
+                        <p class="program-detail">
+                            <strong>Suitable for:</strong> Members building endurance
+                        </p>
+                    </div>
+                </article>
+
+                <article class="program-card" data-category="group">
+                    <div class="program-card-content">
+                        <span class="program-category">GROUP FITNESS</span>
+                        <h3>Group Exercise</h3>
+                        <p>
+                            Enjoy structured group workouts that make exercise
+                            social, motivating, and enjoyable.
+                        </p>
+                        <p class="program-detail">
+                            <strong>Suitable for:</strong> People who enjoy training together
+                        </p>
+                    </div>
+                </article>
+
+                <article class="program-card" data-category="strength">
+                    <div class="program-card-content">
+                        <span class="program-category">STRENGTH</span>
+                        <h3>Functional Training</h3>
+                        <p>
+                            Practise movements that support everyday activities,
+                            balance, coordination, and overall strength.
+                        </p>
+                        <p class="program-detail">
+                            <strong>Suitable for:</strong> Members developing everyday fitness
+                        </p>
+                    </div>
+                </article>
+
+                <article class="program-card" data-category="wellness">
+                    <div class="program-card-content">
+                        <span class="program-category">WELLNESS</span>
+                        <h3>Stretch &amp; Mobility</h3>
+                        <p>
+                            Focus on flexibility, controlled movement, and
+                            mobility as part of a balanced fitness routine.
+                        </p>
+                        <p class="program-detail">
+                            <strong>Suitable for:</strong> Members wanting more mobility
+                        </p>
+                    </div>
+                </article>
+
+                <article class="program-card" data-category="cardio">
+                    <div class="program-card-content">
+                        <span class="program-category">CARDIO</span>
+                        <h3>Personal Fitness Goals</h3>
+                        <p>
+                            Develop a consistent exercise routine around your
+                            personal goals, current ability, and preferred pace.
+                        </p>
+                        <p class="program-detail">
+                            <strong>Suitable for:</strong> Members seeking a personal focus
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="program-cta">
+            <div class="program-cta-content">
+                <p class="eyebrow">YOUR NEXT STEP</p>
+                <h2>Make Time for Your Well-being</h2>
+                <p>
+                    Find a membership option that fits your needs and start
+                    building a more active routine.
+                </p>
+                <a class="button button-light" href="membership.html">
+                    View Membership Options
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div>
+                <h2>Gqeberha Fitness &amp; Wellness Center</h2>
+                <p>Supporting a healthier, more active community.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="programs.html">Programs</a>
+                <a href="membership.html">Membership</a>
+                <a href="contact.html">Contact</a>
+                <a href="references.html">References</a>
+            </div>
+
+            <p class="copyright">
+                &copy; <span id="current-year"></span>
+                Gqeberha Fitness &amp; Wellness Center
+            </p>
+            <p>Developed by Lwande Dana | WDD 131</p>
+        </div>
+    </footer>
+</body>
+</html>
+```

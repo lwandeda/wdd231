@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Gqeberha Fitness & Wellness Center</title>
+
+    <meta
+        name="description"
+        content="Contact Gqeberha Fitness & Wellness Center to ask about fitness programs, membership plans, and wellness services."
+    >
+    <meta name="author" content="Lwande Dana">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <a
+            class="brand"
+            href="index.html"
+            aria-label="Gqeberha Fitness and Wellness Center home"
+        >
+            <span class="brand-name">Gqeberha</span>
+            <span class="brand-subtitle">Fitness & Wellness Center</span>
+        </a>
+
+        <button
+            id="menu-button"
+            class="menu-button"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="navigation"
+        >
+            ☰
+        </button>
+
+        <nav id="navigation" class="navigation" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="programs.html">Programs</a>
+            <a href="membership.html">Membership</a>
+            <a href="contact.html" aria-current="page">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact page introduction -->
+        <section class="page-hero contact-hero">
+            <div class="page-hero-content">
+                <p class="eyebrow">WE ARE HERE TO HELP</p>
+
+                <h1>Let's Talk About Your Goals</h1>
+
+                <p>
+                    Have a question about our fitness programs or membership
+                    options? Send us a message and let us help you take
+                    the next step in your wellness journey.
+                </p>
+
+                <a class="button" href="#contact-form-section">
+                    Send Us a Message
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact details and opening hours -->
+        <section class="contact-section">
+            <div class="section-heading">
+                <p class="eyebrow">GET IN TOUCH</p>
+                <h2>We'd Love to Hear From You</h2>
+                <p>
+                    Use the contact details below or complete the form
+                    and tell us how we can help.
+                </p>
+            </div>
+
+            <div class="contact-info-grid">
+                <article class="contact-info-card">
+                    <h3>Our Location</h3>
+                    <p>Gqeberha, Eastern Cape, South Africa</p>
+                    <p>
+                        Please contact us to confirm the center's
+                        physical address.
+                    </p>
+                </article>
+
+                <article class="contact-info-card">
+                    <h3>Phone</h3>
+                    <p>Contact our team for membership and program enquiries.</p>
+                    <p>Phone details to be confirmed.</p>
+                </article>
+
+                <article class="contact-info-card">
+                    <h3>Email</h3>
+                    <p>Send us your questions about fitness and wellness.</p>
+                    <p>Email address to be confirmed.</p>
+                </article>
+
+                <article class="contact-info-card">
+                    <h3>Opening Hours</h3>
+                    <ul class="opening-hours">
+                        <li><span>Monday–Friday</span><span>6:00–20:00</span></li>
+                        <li><span>Saturday</span><span>7:00–16:00</span></li>
+                        <li><span>Sunday</span><span>8:00–13:00</span></li>
+                    </ul>
+                    <p class="contact-note">
+                        Example hours for this website project.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact form -->
+        <section class="contact-form-section" id="contact-form-section">
+            <div class="contact-form-container">
+                <div class="contact-form-intro">
+                    <p class="eyebrow">SEND AN ENQUIRY</p>
+                    <h2>How Can We Help You?</h2>
+                    <p>
+                        Complete the form below. Fields marked with an
+                        asterisk (*) are required.
+                    </p>
+                </div>
+
+                <form id="contact-form" class="contact-form">
+                    <div class="form-field">
+                        <label for="full-name">Full Name *</label>
+                        <input
+                            type="text"
+                            id="full-name"
+                            name="fullName"
+                            autocomplete="name"
+                            placeholder="Enter your full name"
+                            minlength="2"
+                            maxlength="80"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="email">Email Address *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="phone">Phone Number (optional)</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            autocomplete="tel"
+                            placeholder="Enter your phone number"
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="enquiry-type">What Is Your Enquiry About? *</label>
+                        <select id="enquiry-type" name="enquiryType" required>
+                            <option value="">Select an enquiry type</option>
+                            <option value="membership">Membership plans</option>
+                            <option value="programs">Fitness programs</option>
+                            <option value="wellness">Wellness services</option>
+                            <option value="personal-training">Personal training</option>
+                            <option value="other">Other enquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="message">Your Message *</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            minlength="10"
+                            maxlength="1000"
+                            placeholder="Tell us how we can help..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button class="button contact-submit" type="submit">
+                        Send Message
+                    </button>
+
+                    <p class="form-note">
+                        This is a demonstration form. Messages will not be
+                        emailed or sent to a real fitness center.
+                    </p>
+
+                    <p
+                        id="form-feedback"
+                        class="form-feedback"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Final call to action -->
+        <section class="membership-cta">
+            <h2>Your Wellness Journey Starts Here</h2>
+            <p>
+                Explore our fitness programs and find the right way
+                to move towards your goals.
+            </p>
+            <a class="button button-light" href="programs.html">
+                Explore Our Programs
+            </a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div>
+                <h2>Gqeberha Fitness & Wellness Center</h2>
+                <p>Helping our community move better and live healthier.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="programs.html">Programs</a>
+                <a href="membership.html">Membership</a>
+                <a href="contact.html">Contact</a>
+                <a href="references.html">References</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; <span id="current-year"></span>
+                Gqeberha Fitness & Wellness Center
+            </p>
+            <p>WDD 131 Website Project | Lwande Dana</p>
+        </div>
+    </footer>
+</body>
+</html>

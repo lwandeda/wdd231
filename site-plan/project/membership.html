@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Membership | Gqeberha Fitness & Wellness Center</title>
+
+    <meta
+        name="description"
+        content="Explore membership options at Gqeberha Fitness & Wellness Center and find a plan that suits your fitness goals."
+    >
+    <meta name="author" content="Lwande Dana">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Gqeberha Fitness and Wellness Center home">
+            <span class="brand-name">Gqeberha</span>
+            <span class="brand-subtitle">Fitness & Wellness Center</span>
+        </a>
+
+        <button
+            id="menu-button"
+            class="menu-button"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="navigation"
+        >
+            ☰
+        </button>
+
+        <nav id="navigation" class="navigation" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="programs.html">Programs</a>
+            <a href="membership.html" aria-current="page">Membership</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero membership-hero">
+            <div class="page-hero-content">
+                <p class="eyebrow">INVEST IN YOUR WELL-BEING</p>
+                <h1>Choose Your Membership</h1>
+                <p>
+                    Find a plan that fits your lifestyle, supports your goals,
+                    and helps you build healthier habits.
+                </p>
+                <a class="button" href="#membership-plans">Explore Memberships</a>
+            </div>
+        </section>
+
+        <section class="membership-section" id="membership-plans">
+            <div class="section-heading">
+                <p class="eyebrow">YOUR FITNESS JOURNEY</p>
+                <h2>Membership Plans</h2>
+                <p>
+                    Choose the level of support that works best for you.
+                    These prices are examples for this website project.
+                </p>
+            </div>
+
+            <div class="membership-grid">
+                <article class="membership-card">
+                    <h3>Basic</h3>
+                    <p class="membership-description">
+                        A simple starting point for building a fitness routine.
+                    </p>
+
+                    <p class="membership-price">
+                        <span class="price-amount">R299</span>
+                        <span class="price-period">/ month</span>
+                    </p>
+
+                    <ul class="membership-features">
+                        <li>Access to the gym</li>
+                        <li>Use of standard equipment</li>
+                        <li>Self-guided workouts</li>
+                        <li>General fitness guidance</li>
+                    </ul>
+
+                    <button
+                        class="button membership-select"
+                        type="button"
+                        data-plan="basic"
+                    >
+                        Choose Basic
+                    </button>
+                </article>
+
+                <article class="membership-card membership-featured">
+                    <p class="membership-badge">POPULAR CHOICE</p>
+                    <h3>Standard</h3>
+                    <p class="membership-description">
+                        More variety for people who want to stay consistent.
+                    </p>
+
+                    <p class="membership-price">
+                        <span class="price-amount">R499</span>
+                        <span class="price-period">/ month</span>
+                    </p>
+
+                    <ul class="membership-features">
+                        <li>Everything in Basic</li>
+                        <li>Group exercise classes</li>
+                        <li>Fitness progress check-ins</li>
+                        <li>Stretching and mobility sessions</li>
+                    </ul>
+
+                    <button
+                        class="button membership-select"
+                        type="button"
+                        data-plan="standard"
+                    >
+                        Choose Standard
+                    </button>
+                </article>
+
+                <article class="membership-card">
+                    <h3>Premium</h3>
+                    <p class="membership-description">
+                        Extra guidance for a more personalised experience.
+                    </p>
+
+                    <p class="membership-price">
+                        <span class="price-amount">R699</span>
+                        <span class="price-period">/ month</span>
+                    </p>
+
+                    <ul class="membership-features">
+                        <li>Everything in Standard</li>
+                        <li>Personal fitness consultation</li>
+                        <li>Individual goal-setting session</li>
+                        <li>Priority wellness support</li>
+                    </ul>
+
+                    <button
+                        class="button membership-select"
+                        type="button"
+                        data-plan="premium"
+                    >
+                        Choose Premium
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <section class="membership-calculator" aria-labelledby="calculator-heading">
+            <div class="calculator-content">
+                <p class="eyebrow">PLAN YOUR BUDGET</p>
+                <h2 id="calculator-heading">Membership Cost Calculator</h2>
+                <p>
+                    Select a plan and see its estimated cost over one year.
+                    The calculation uses the example monthly prices above.
+                </p>
+
+                <label for="membership-plan">Choose a membership plan</label>
+                <select id="membership-plan" name="membership-plan">
+                    <option value="basic">Basic — R299 per month</option>
+                    <option value="standard">Standard — R499 per month</option>
+                    <option value="premium">Premium — R699 per month</option>
+                </select>
+
+                <div class="calculator-result" aria-live="polite">
+                    <p>Monthly cost</p>
+                    <p id="monthly-cost">R299</p>
+
+                    <p>Estimated cost for 12 months</p>
+                    <p id="annual-cost">R3,588</p>
+                </div>
+
+                <p id="membership-message" class="membership-message">
+                    You have selected the Basic membership.
+                </p>
+            </div>
+        </section>
+
+        <section class="membership-cta">
+            <h2>Your Health Is Worth Investing In</h2>
+            <p>
+                Have questions before choosing a plan? Get in touch with us
+                to learn more about our fitness and wellness services.
+            </p>
+            <a class="button button-light" href="contact.html">Contact Us</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div>
+                <h2>Gqeberha Fitness & Wellness Center</h2>
+                <p>Helping our community move better and live healthier.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="programs.html">Programs</a>
+                <a href="membership.html">Membership</a>
+                <a href="contact.html">Contact</a>
+                <a href="references.html">References</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; <span id="current-year"></span>
+                Gqeberha Fitness & Wellness Center
+            </p>
+            <p>WDD 131 Website Project | Lwande Dana</p>
+        </div>
+    </footer>
+</body>
+</html>

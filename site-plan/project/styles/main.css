@@ -1,684 +1,1303 @@
-/* =========================================================
-GQEBERHA FITNESS & WELLNESS CENTER
-Main Stylesheet
-Mobile-First Design
-========================================================= */
 
 /* =========================================================
-
-1. CSS VARIABLES
-   Centralized colors make the design easier to maintain.
+   GQEBERHA FITNESS & WELLNESS CENTER
+   Main Stylesheet | Mobile-first responsive design
    ========================================================= */
 
+/* 1. VARIABLES */
 :root {
---dark-blue: #0D3B66;
---teal: #00897B;
---light-gray: #F4F6F8;
---white: #FFFFFF;
---dark-text: #1F2933;
---gray-text: #52606D;
---border-color: #D9E2EC;
-
-
---heading-font: "Poppins", sans-serif;
---body-font: "Open Sans", sans-serif;
-
---max-width: 1200px;
-
-
+    --dark-blue: #0D3B66;
+    --teal: #00897B;
+    --light-gray: #F4F6F8;
+    --white: #FFFFFF;
+    --dark-text: #1F2933;
+    --gray-text: #52606D;
+    --border-color: #D9E2EC;
+    --heading-font: "Poppins", sans-serif;
+    --body-font: "Open Sans", sans-serif;
+    --max-width: 1200px;
 }
 
-/* =========================================================
-2. RESET / BASE STYLES
-These rules create a consistent starting point across
-different browsers.
-========================================================= */
-
+/* 2. RESET AND BASE */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  }
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 html {
-scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-font-family: var(--body-font);
-color: var(--dark-text);
-background-color: var(--white);
-line-height: 1.6;
+    background: var(--white);
+    color: var(--dark-text);
+    font-family: var(--body-font);
+    line-height: 1.6;
 }
 
 img {
-display: block;
-max-width: 100%;
-height: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 a {
-color: inherit;
+    color: inherit;
 }
 
-ul {
-list-style: none;
+button {
+    font: inherit;
 }
 
-/* =========================================================
-3. ACCESSIBILITY
-Skip link allows keyboard users to jump directly to
-the main content.
-========================================================= */
+[hidden] {
+    display: none !important;
+}
 
+/* 3. ACCESSIBILITY */
 .skip-link {
-position: absolute;
-left: -9999px;
-top: auto;
-z-index: 9999;
-background-color: var(--dark-blue);
-color: var(--white);
-padding: 0.75rem 1rem;
-text-decoration: none;
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    z-index: 2000;
+    padding: 0.75rem 1rem;
+    background: var(--dark-blue);
+    color: var(--white);
 }
 
 .skip-link:focus {
-left: 1rem;
-top: 1rem;
+    top: 1rem;
 }
 
-/* =========================================================
-4. GENERAL CONTAINERS
-Keeps content from becoming too wide on large screens.
-========================================================= */
+:focus-visible {
+    outline: 3px solid var(--teal);
+    outline-offset: 4px;
+}
 
+/* 4. SHARED CONTAINERS */
 .section-container,
 .header-container,
 .footer-container {
-width: min(92%, var(--max-width));
-margin: 0 auto;
+    width: min(92%, var(--max-width));
+    margin-inline: auto;
 }
 
 .section {
-padding: 4rem 0;
+    padding: 4rem 0;
 }
 
-/* =========================================================
-5. TYPOGRAPHY
-Poppins = headings
-Open Sans = body text
-========================================================= */
-
+/* 5. TYPOGRAPHY */
 h1,
 h2,
 h3,
 h4 {
-font-family: var(--heading-font);
-line-height: 1.2;
-color: var(--dark-blue);
+    color: var(--dark-blue);
+    font-family: var(--heading-font);
+    line-height: 1.2;
 }
 
 h1 {
-font-size: 2.3rem;
+    font-size: clamp(2.2rem, 5vw, 4rem);
 }
 
 h2 {
-font-size: 1.9rem;
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
 }
 
 h3 {
-font-size: 1.3rem;
+    font-size: 1.25rem;
 }
 
 p {
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .section-heading {
-max-width: 700px;
-margin-bottom: 2rem;
+    max-width: 720px;
+    margin-bottom: 2rem;
 }
 
-.section-label {
-color: var(--teal);
-font-family: var(--heading-font);
-font-size: 0.85rem;
-font-weight: 700;
-letter-spacing: 0.08em;
-margin-bottom: 0.5rem;
+.section-label,
+.eyebrow {
+    margin-bottom: 0.75rem;
+    color: var(--teal);
+    font-family: var(--heading-font);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
 }
 
 .section-heading h2 {
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .section-heading p:last-child {
-color: var(--gray-text);
+    color: var(--gray-text);
 }
 
-/* =========================================================
-6. HEADER
-Mobile layout:
-Logo + menu button
-Navigation is controlled by JavaScript.
-========================================================= */
+/* 6. HEADER — supports both HTML structures */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-container,
+.site-header {
+    min-height: 76px;
+}
 
 .site-header {
-background-color: var(--white);
-border-bottom: 1px solid var(--border-color);
-position: sticky;
-top: 0;
-z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-inline: 4%;
 }
 
 .header-container {
-min-height: 76px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
-.logo {
-display: flex;
-flex-direction: column;
-color: var(--dark-blue);
-font-family: var(--heading-font);
-font-size: 1rem;
-font-weight: 700;
-line-height: 1.1;
-text-decoration: none;
+.logo,
+.brand {
+    display: flex;
+    flex-direction: column;
+    color: var(--dark-blue);
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
 }
 
-.logo span:last-child {
-color: var(--teal);
+.logo span:last-child,
+.brand-subtitle {
+    color: var(--teal);
+    font-size: 0.8rem;
 }
 
-/* =========================================================
-7. MOBILE MENU BUTTON
-========================================================= */
-
+/* 7. MOBILE MENU */
 .menu-button {
-border: 0;
-background-color: transparent;
-color: var(--dark-blue);
-font-size: 1.8rem;
-cursor: pointer;
-padding: 0.4rem;
-line-height: 1;
+    display: block;
+    padding: 0.4rem;
+    border: 0;
+    background: transparent;
+    color: var(--dark-blue);
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
 }
 
-.menu-button:hover,
-.menu-button:focus {
-color: var(--teal);
+.menu-button:hover {
+    color: var(--teal);
 }
 
-.menu-button:focus-visible,
-a:focus-visible,
-button:focus-visible {
-outline: 3px solid var(--teal);
-outline-offset: 3px;
-}
-
-/* =========================================================
-8. NAVIGATION
-The JavaScript will add/remove the "open" class.
-========================================================= */
-
+/* 8. NAVIGATION — supports direct links and a list */
 .navigation {
-display: none;
-position: absolute;
-left: 0;
-right: 0;
-top: 76px;
-background-color: var(--white);
-border-bottom: 1px solid var(--border-color);
-box-shadow: 0 4px 10px rgb(0 0 0 / 8%);
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 8px 18px rgb(0 0 0 / 8%);
 }
 
 .navigation.open {
-display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 .navigation ul {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
 }
 
 .navigation a {
-display: block;
-padding: 1rem 1.5rem;
-color: var(--dark-blue);
-font-family: var(--heading-font);
-font-weight: 600;
-text-decoration: none;
-border-bottom: 1px solid var(--border-color);
+    display: block;
+    padding: 0.9rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--dark-blue);
+    font-family: var(--heading-font);
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .navigation a:hover,
-.navigation a:focus {
-background-color: var(--light-gray);
-color: var(--teal);
-}
-
 .navigation a[aria-current="page"] {
-color: var(--teal);
+    color: var(--teal);
+    background: var(--light-gray);
 }
 
-/* =========================================================
-9. HERO SECTION
-Designed to be visually strong on mobile first.
-========================================================= */
-
+/* 9. HOMEPAGE HERO */
 .hero {
-min-height: 600px;
-display: flex;
-align-items: center;
-background:
-linear-gradient(
-rgb(13 59 102 / 82%),
-rgb(13 59 102 / 82%)
-),
-url("../images/fitness-hero.jpg") center / cover no-repeat;
-color: var(--white);
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgb(9 42 73 / 90%),
+            rgb(13 59 102 / 65%)
+        ),
+        url("../images/hero.jpg") center / cover no-repeat;
+    color: var(--white);
 }
 
 .hero-content {
-width: min(92%, var(--max-width));
-margin: 0 auto;
-padding: 5rem 0;
+    width: min(92%, var(--max-width));
+    margin-inline: auto;
+    padding-block: 5rem;
 }
 
 .hero-tagline {
-color: var(--white);
-font-family: var(--heading-font);
-font-size: 0.8rem;
-font-weight: 600;
-letter-spacing: 0.1em;
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    font-family: var(--heading-font);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
 }
 
 .hero h1 {
-max-width: 700px;
-color: var(--white);
-font-size: 2.5rem;
-margin-bottom: 1.5rem;
+    max-width: 750px;
+    margin-bottom: 1.25rem;
+    color: var(--white);
 }
 
 .hero h1 span {
-color: #80CBC4;
-display: block;
+    display: block;
+    color: #80CBC4;
 }
 
 .hero p:not(.hero-tagline) {
-max-width: 650px;
-color: var(--white);
-font-size: 1rem;
-margin-bottom: 2rem;
+    max-width: 650px;
+    margin-bottom: 1.75rem;
+    color: var(--white);
+    line-height: 1.8;
 }
 
-/* =========================================================
-10. BUTTONS
-Teal is used as the main action color.
-========================================================= */
-
+/* 10. BUTTONS */
 .button {
-display: inline-block;
-background-color: var(--teal);
-color: var(--white);
-padding: 0.85rem 1.4rem;
-border: 2px solid var(--teal);
-border-radius: 6px;
-font-family: var(--heading-font);
-font-size: 0.95rem;
-font-weight: 600;
-text-decoration: none;
-transition:
-background-color 0.2s ease,
-transform 0.2s ease;
+    display: inline-block;
+    padding: 0.85rem 1.4rem;
+    border: 2px solid var(--teal);
+    border-radius: 6px;
+    background: var(--teal);
+    color: var(--white);
+    font-family: var(--heading-font);
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.button:hover,
-.button:focus {
-background-color: var(--dark-blue);
-border-color: var(--dark-blue);
-transform: translateY(-2px);
+.button:hover {
+    transform: translateY(-2px);
+    background: var(--dark-blue);
+    border-color: var(--dark-blue);
 }
 
 .button-light {
-background-color: var(--white);
-color: var(--dark-blue);
-border-color: var(--white);
+    background: var(--white);
+    border-color: var(--white);
+    color: var(--dark-blue);
 }
 
-.button-light:hover,
-.button-light:focus {
-background-color: var(--light-gray);
-border-color: var(--light-gray);
+.button-light:hover {
+    background: var(--light-gray);
+    border-color: var(--light-gray);
+    color: var(--dark-blue);
 }
 
-/* =========================================================
-11. ABOUT SECTION
-========================================================= */
-
+/* 11. ABOUT SECTION */
 .about {
-background-color: var(--white);
+    padding: 4rem 0;
+    background: var(--white);
 }
 
 .about-content {
-max-width: 850px;
+    max-width: 850px;
 }
 
 .about-content p {
-color: var(--gray-text);
+    color: var(--gray-text);
 }
 
-/* =========================================================
-12. PROGRAMS SECTION
-========================================================= */
-
+/* 12. HOMEPAGE PROGRAM CARDS */
 .programs {
-background-color: var(--light-gray);
+    padding: 4rem 0;
+    background: var(--light-gray);
 }
 
 .program-grid {
-display: grid;
-grid-template-columns: 1fr;
-gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
 .program-card {
-background-color: var(--white);
-padding: 1.75rem;
-border-radius: 10px;
-border: 1px solid var(--border-color);
-box-shadow: 0 3px 12px rgb(13 59 102 / 8%);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    background: var(--white);
+    box-shadow: 0 5px 20px rgb(13 59 102 / 7%);
 }
 
 .program-card h3 {
-margin-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 
 .program-card p {
-color: var(--gray-text);
-margin-bottom: 1rem;
-}
-
-.program-card a {
-color: var(--teal);
-font-family: var(--heading-font);
-font-weight: 600;
-text-decoration: none;
-}
-
-.program-card a:hover,
-.program-card a:focus {
-text-decoration: underline;
+    color: var(--gray-text);
 }
 
 .card-icon {
-width: 48px;
-height: 48px;
-display: grid;
-place-items: center;
-margin-bottom: 1rem;
-border-radius: 50%;
-background-color: var(--dark-blue);
-color: var(--white);
-font-family: var(--heading-font);
-font-size: 1.4rem;
-font-weight: 700;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    background: var(--dark-blue);
+    color: var(--white);
+    font-size: 1.4rem;
 }
 
-/* =========================================================
-13. WELLNESS SECTION
-========================================================= */
-
+/* 13. WELLNESS */
 .wellness {
-background-color: var(--white);
+    padding: 4rem 0;
 }
 
 .wellness-grid {
-display: grid;
-grid-template-columns: 1fr;
-gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
 .wellness-card {
-padding: 1.5rem;
-border-left: 4px solid var(--teal);
-background-color: var(--light-gray);
-}
-
-.wellness-card h3 {
-margin-bottom: 0.75rem;
+    padding: 1.5rem;
+    border-left: 4px solid var(--teal);
+    background: var(--light-gray);
 }
 
 .wellness-card p {
-color: var(--gray-text);
-margin-bottom: 0;
+    margin-bottom: 0;
+    color: var(--gray-text);
 }
 
-/* =========================================================
-14. MEMBERSHIP CALL-TO-ACTION
-========================================================= */
-
+/* 14. MEMBERSHIP CTA */
 .membership-cta {
-padding: 4rem 0;
-background-color: var(--dark-blue);
-text-align: center;
+    padding: 4rem 1.25rem;
+    background: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
 }
 
 .membership-cta h2 {
-color: var(--white);
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
+    color: var(--white);
 }
 
 .membership-cta p {
-max-width: 650px;
-margin: 0 auto 1.5rem;
-color: var(--white);
+    max-width: 650px;
+    margin: 0 auto 1.5rem;
 }
 
-/* =========================================================
-15. FOOTER
-========================================================= */
-
+/* 15. FOOTER — supports both HTML structures */
 .site-footer {
-background-color: #092A49;
-color: var(--white);
-padding-top: 3rem;
+    padding: 3rem 0 0;
+    background: #092A49;
+    color: var(--white);
+}
+
+.footer-container,
+.footer-content {
+    width: min(92%, var(--max-width));
+    margin-inline: auto;
 }
 
 .footer-container {
-display: grid;
-grid-template-columns: 1fr;
-gap: 2rem;
-padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-bottom: 2rem;
 }
 
 .site-footer h2,
 .site-footer h3 {
-color: var(--white);
-margin-bottom: 0.75rem;
-}
-
-.footer-about p {
-max-width: 450px;
-}
-
-.footer-links a {
-color: var(--white);
-text-decoration: none;
-}
-
-.footer-links a:hover,
-.footer-links a:focus {
-color: #80CBC4;
-text-decoration: underline;
-}
-
-.footer-links li {
-margin-bottom: 0.5rem;
-}
-
-.footer-contact address {
-font-style: normal;
-line-height: 1.8;
-}
-
-.footer-bottom {
-border-top: 1px solid rgb(255 255 255 / 20%);
-width: min(92%, var(--max-width));
-margin: 0 auto;
-padding: 1.5rem 0;
-display: flex;
-flex-direction: column;
-gap: 0.5rem;
-}
-
-.footer-bottom p {
-margin-bottom: 0;
-font-size: 0.9rem;
-}
-
-.footer-bottom a {
-color: var(--white);
-}
-
-.footer-bottom a:hover,
-.footer-bottom a:focus {
-color: #80CBC4;
-}
-
-/* =========================================================
-16. MEDIUM SCREENS
-Tablets and smaller laptops.
-========================================================= */
-
-@media screen and (min-width: 600px) {
-
-
-h1 {
-    font-size: 3rem;
-}
-
-h2 {
-    font-size: 2.2rem;
-}
-
-.hero {
-    min-height: 650px;
-}
-
-.program-grid {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.wellness-grid {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.footer-container {
-    grid-template-columns: 2fr 1fr;
-}
-
-
-}
-
-/* =========================================================
-17. LARGE SCREENS
-Desktop navigation and multi-column layouts.
-========================================================= */
-
-@media screen and (min-width: 900px) {
-
-
-.menu-button {
-    display: none;
-}
-
-.navigation {
-    display: block;
-    position: static;
-    background-color: transparent;
-    border: 0;
-    box-shadow: none;
-}
-
-.navigation ul {
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.navigation a {
-    padding: 0.6rem 0.8rem;
-    border-bottom: 3px solid transparent;
-}
-
-.navigation a:hover,
-.navigation a:focus {
-    background-color: transparent;
-    color: var(--teal);
-    border-bottom-color: var(--teal);
-}
-
-.navigation a[aria-current="page"] {
-    border-bottom-color: var(--teal);
-}
-
-.hero-content {
-    padding: 7rem 0;
-}
-
-.hero h1 {
-    font-size: 4rem;
-}
-
-.hero p:not(.hero-tagline) {
+    margin-bottom: 0.75rem;
+    color: var(--white);
     font-size: 1.1rem;
 }
 
-.program-grid {
-    grid-template-columns: repeat(3, 1fr);
+.site-footer p {
+    color: #E5EDF5;
 }
 
-.wellness-grid {
-    grid-template-columns: repeat(3, 1fr);
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
 }
 
-.footer-container {
-    grid-template-columns: 2fr 1fr 1fr;
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #80CBC4;
+    text-decoration: underline;
 }
 
 .footer-bottom {
-    flex-direction: row;
-    justify-content: space-between;
+    width: min(92%, var(--max-width));
+    margin-inline: auto;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgb(255 255 255 / 20%);
+}
+
+.footer-bottom p,
+.copyright {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* 16. PROGRAMS PAGE HERO */
+.page-hero {
+    min-height: 420px;
+    display: flex;
     align-items: center;
+    padding: 4rem 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgb(9 42 73 / 94%),
+            rgb(13 59 102 / 76%),
+            rgb(0 137 123 / 45%)
+        ),
+        url("../images/class.webp") center / cover no-repeat;
+    color: var(--white);
 }
 
-
+.page-hero-content {
+    width: min(92%, var(--max-width));
+    margin-inline: auto;
 }
 
-/* =========================================================
-18. REDUCED MOTION
-Helps users who prefer less animation.
-========================================================= */
+.page-hero .eyebrow,
+.program-cta .eyebrow {
+    color: #80CBC4;
+}
 
+.page-hero h1 {
+    max-width: 750px;
+    margin-bottom: 1.25rem;
+    color: var(--white);
+    font-size: clamp(2.3rem, 6vw, 4rem);
+}
+
+.page-hero-content > p:not(.eyebrow) {
+    max-width: 620px;
+    margin-bottom: 1.75rem;
+    color: var(--white);
+    line-height: 1.8;
+}
+
+/* 17. PROGRAMS PAGE CONTENT */
+.programs-section {
+    width: min(92%, var(--max-width));
+    margin-inline: auto;
+    padding: 5rem 0;
+}
+
+.programs-section .section-heading {
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.programs-section .section-heading h2 {
+    margin-bottom: 1rem;
+}
+
+.programs-section .section-heading p {
+    color: var(--gray-text);
+    line-height: 1.8;
+}
+
+/* Program filters */
+.program-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.65rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-button {
+    padding: 0.65rem 1.1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    background: var(--white);
+    color: var(--dark-blue);
+    font-family: var(--heading-font);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-button:hover,
+.filter-button.active {
+    border-color: var(--dark-blue);
+    background: var(--dark-blue);
+    color: var(--white);
+}
+
+.program-count {
+    margin-bottom: 1.5rem;
+    color: var(--gray-text);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Programs cards */
+.programs-section .program-grid {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+}
+
+.programs-section .program-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.programs-section .program-card::before {
+    content: "";
+    display: block;
+    height: 6px;
+    background: var(--teal);
+}
+
+.programs-section .program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgb(13 59 102 / 13%);
+}
+
+.program-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1.6rem;
+}
+
+.program-category {
+    align-self: flex-start;
+    margin-bottom: 1rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 4px;
+    background: #E0F2F1;
+    color: #00695C;
+    font-family: var(--heading-font);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.programs-section .program-card h3 {
+    margin-bottom: 0.85rem;
+}
+
+.programs-section .program-card p {
+    font-size: 0.94rem;
+    line-height: 1.8;
+}
+
+.programs-section .program-card .program-detail {
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-top: 1rem;
+    border-top: 1px solid #E4EAF0;
+    font-size: 0.85rem;
+}
+
+.program-detail strong {
+    color: var(--dark-blue);
+}
+
+/* Programs CTA */
+.program-cta {
+    padding: 4.5rem 1.25rem;
+    background: linear-gradient(120deg, var(--dark-blue), #092A49);
+    color: var(--white);
+    text-align: center;
+}
+
+.program-cta-content {
+    width: min(100%, 760px);
+    margin-inline: auto;
+}
+
+.program-cta h2 {
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.program-cta p:not(.eyebrow) {
+    margin-bottom: 1.75rem;
+    color: var(--white);
+    line-height: 1.8;
+}
+
+/* 18. TABLET */
+@media screen and (min-width: 600px) {
+    .hero {
+        min-height: 600px;
+    }
+
+    .program-grid,
+    .programs-section .program-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .wellness-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-container {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+/* 19. DESKTOP */
+@media screen and (min-width: 900px) {
+    .site-header {
+        padding-inline: max(4%, calc((100% - var(--max-width)) / 2));
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    .navigation,
+    .navigation.open {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.25rem;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .navigation ul {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .navigation a {
+        padding: 0.6rem 0.8rem;
+        border-bottom: 3px solid transparent;
+        background: transparent;
+    }
+
+    .navigation a:hover,
+    .navigation a[aria-current="page"] {
+        border-bottom-color: var(--teal);
+        background: transparent;
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero-content {
+        padding-block: 7rem;
+    }
+
+    .program-grid,
+    .programs-section .program-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .wellness-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .footer-container {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .page-hero {
+        min-height: 500px;
+    }
+
+    .programs-section .program-card-content {
+        padding: 1.8rem;
+    }
+}
+
+/* 20. REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}
+css
+/* ==============================
+   MEMBERSHIP PAGE
+============================== */
 
-html {
-    scroll-behavior: auto;
+/* Membership section */
+.membership-section {
+    padding: 4rem 1.25rem;
+    background-color: var(--light-gray);
 }
 
-*,
-*::before,
-*::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+.membership-section .section-heading {
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
 }
 
+.membership-section .section-heading h2 {
+    margin-bottom: 1rem;
+}
+
+.membership-section .section-heading > p:last-child {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Membership cards layout */
+.membership-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Individual membership card */
+.membership-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    background-color: var(--white);
+    border: 1px solid #dce3e9;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgb(13 59 102 / 8%);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.membership-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgb(13 59 102 / 14%);
+}
+
+.membership-card h3 {
+    margin-bottom: 0.75rem;
+    color: var(--dark-blue);
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+}
+
+.membership-description {
+    min-height: 3.5rem;
+    margin-bottom: 1.25rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Membership price */
+.membership-price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-blue);
+}
+
+.price-amount {
+    font-family: "Poppins", sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.price-period {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Membership features */
+.membership-features {
+    display: grid;
+    gap: 0.85rem;
+    margin: 0 0 2rem;
+    padding: 0;
+    list-style: none;
+}
+
+.membership-features li {
+    position: relative;
+    padding-left: 1.75rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.membership-features li::before {
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 700;
+    content: "✓";
+}
+
+/* Buttons stay aligned at the bottom */
+.membership-select {
+    width: 100%;
+    margin-top: auto;
+    border: 2px solid var(--teal);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+.membership-select:hover {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+/* Featured Standard membership */
+.membership-featured {
+    border: 2px solid var(--teal);
+}
+
+.membership-badge {
+    align-self: flex-start;
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+    background-color: var(--teal);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+/* ==============================
+   MEMBERSHIP COST CALCULATOR
+============================== */
+
+.membership-calculator {
+    padding: 4rem 1.25rem;
+    background-color: var(--white);
+}
+
+.calculator-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.calculator-content h2 {
+    margin-bottom: 1rem;
+}
+
+.calculator-content > p:not(.eyebrow) {
+    margin-bottom: 1.5rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.calculator-content label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--dark-blue);
+    font-weight: 700;
+}
+
+#membership-plan {
+    width: 100%;
+    min-height: 48px;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+    border: 1px solid #aebbc7;
+    border-radius: 6px;
+    background-color: var(--white);
+    color: #222;
+    font: inherit;
+}
+
+#membership-plan:focus-visible {
+    outline: 3px solid var(--teal);
+    outline-offset: 3px;
+}
+
+.calculator-result {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem 1rem;
+    padding: 1.5rem;
+    border-left: 5px solid var(--teal);
+    border-radius: 8px;
+    background-color: var(--light-gray);
+}
+
+.calculator-result p {
+    margin: 0;
+}
+
+.calculator-result p:nth-child(2),
+.calculator-result p:nth-child(4) {
+    color: var(--dark-blue);
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: right;
+}
+
+.membership-message {
+    margin-top: 1rem;
+    color: var(--teal);
+    font-weight: 600;
+}
+
+/* ==============================
+   MEMBERSHIP RESPONSIVE DESIGN
+============================== */
+
+@media (min-width: 600px) {
+    .membership-section,
+    .membership-calculator {
+        padding: 5rem 2rem;
+    }
+
+    .membership-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+    }
+
+    .membership-card {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .membership-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .membership-featured {
+        transform: translateY(-8px);
+    }
+
+    .membership-featured:hover {
+        transform: translateY(-13px);
+    }
+}
+
+/* Respect visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .membership-card {
+        transition: none;
+    }
+
+    .membership-card:hover {
+        transform: none;
+    }
+
+    .membership-featured,
+    .membership-featured:hover {
+        transform: none;
+    }
+}
+
+/* ==============================
+   CONTACT PAGE
+============================== */
+
+/* Contact information section */
+.contact-section {
+    padding: 4rem 1.25rem;
+    background-color: var(--light-gray);
+}
+
+.contact-section .section-heading {
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.contact-section .section-heading h2 {
+    margin-bottom: 1rem;
+}
+
+.contact-section .section-heading > p:last-child {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Contact information cards */
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-info-card {
+    padding: 1.75rem;
+    background-color: var(--white);
+    border: 1px solid #dce3e9;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgb(13 59 102 / 6%);
+}
+
+.contact-info-card h3 {
+    margin-bottom: 0.75rem;
+    color: var(--dark-blue);
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+}
+
+.contact-info-card p {
+    margin-bottom: 0.75rem;
+    color: #444;
+    line-height: 1.7;
+}
+
+.contact-info-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Opening hours */
+.opening-hours {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+.opening-hours li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.35rem 0.75rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid #e3e8ed;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.opening-hours li span:last-child {
+    font-weight: 600;
+}
+
+.contact-note {
+    color: #666 !important;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/* ==============================
+   CONTACT FORM
+============================== */
+
+.contact-form-section {
+    padding: 4rem 1.25rem;
+    background-color: var(--white);
+}
+
+.contact-form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-form-intro h2 {
+    margin-bottom: 1rem;
+}
+
+.contact-form-intro > p:last-child {
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Form layout */
+.contact-form {
+    display: grid;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background-color: var(--light-gray);
+    border: 1px solid #e0e6eb;
+    border-radius: 12px;
+}
+
+.form-field {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.form-field label {
+    color: var(--dark-blue);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+/* Inputs, dropdown, and message box */
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid #aebbc7;
+    border-radius: 6px;
+    background-color: var(--white);
+    color: #222;
+    font: inherit;
+    font-size: 1rem;
+}
+
+.form-field textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: #6b7280;
+    opacity: 1;
+}
+
+/* Visible keyboard focus for accessibility */
+.form-field input:focus-visible,
+.form-field select:focus-visible,
+.form-field textarea:focus-visible {
+    border-color: var(--teal);
+    outline: 3px solid var(--teal);
+    outline-offset: 2px;
+}
+
+/* Browser validation styling */
+.form-field input:invalid:not(:placeholder-shown),
+.form-field textarea:invalid:not(:placeholder-shown) {
+    border-color: #b42318;
+}
+
+.contact-submit {
+    width: 100%;
+    min-height: 48px;
+    border: 2px solid var(--teal);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+.contact-submit:hover {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+.form-note {
+    margin: 0;
+    color: #555;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.form-feedback {
+    margin: 0;
+    color: var(--dark-blue);
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* ==============================
+   CONTACT PAGE RESPONSIVENESS
+============================== */
+
+@media (min-width: 600px) {
+    .contact-section,
+    .contact-form-section {
+        padding: 5rem 2rem;
+    }
+
+    .contact-info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-form {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .contact-info-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .contact-form-container {
+        grid-template-columns: 0.8fr 1.2fr;
+        align-items: start;
+        gap: 3rem;
+    }
+
+    .contact-form-intro {
+        position: sticky;
+        top: 2rem;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .contact-info-card {
+        transition: none;
+    }
 }
