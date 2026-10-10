@@ -1301,3 +1301,85 @@ css
         transition: none;
     }
 }
+
+/* ==============================
+   REFERENCES PAGE
+============================== */
+
+.references-section {
+    padding: 4rem 1.25rem;
+    background-color: var(--light-gray);
+}
+
+.references-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.references-section .section-heading {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.references-section .section-heading > p:last-child {
+    color: #555;
+    line-height: 1.7;
+}
+
+.reference-item {
+    margin-bottom: 1.5rem;
+    padding: 1.75rem;
+    background-color: var(--white);
+    border: 1px solid #dce3e9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgb(13 59 102 / 5%);
+}
+
+.reference-item h3 {
+    margin-bottom: 0.75rem;
+    color: var(--dark-blue);
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+}
+
+.reference-item p,
+.reference-item li {
+    color: #333;
+    line-height: 1.8;
+}
+
+.reference-item p {
+    margin-bottom: 0.75rem;
+}
+
+.reference-item ul {
+    display: grid;
+    gap: 0.6rem;
+    padding-left: 1.5rem;
+}
+
+.reference-item a {
+    color: var(--dark-blue);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.reference-item a:hover {
+    color: var(--teal);
+}
+
+.reference-item a:focus-visible {
+    outline: 3px solid var(--teal);
+    outline-offset: 3px;
+}
+
+@media (min-width: 600px) {
+    .references-section {
+        padding: 5rem 2rem;
+    }
+
+    .reference-item {
+        padding: 2rem;
+    }
+}
