@@ -29,7 +29,7 @@ menuButton.addEventListener("click", () => {
 const currentYear = document.querySelector("#current-year");
 
 currentYear.textContent = new Date().getFullYear();
-javascript
+
 // Fitness program filtering
 const programList = document.querySelector("#program-list");
 
@@ -268,3 +268,21 @@ if (contactForm && formFeedback) {
         }
     });
 }
+
+```javascript
+const menuButton = document.querySelector("#menu-button");
+const navigation = document.querySelector("#navigation");
+
+menuButton.addEventListener("click", () => {
+    const isOpen = navigation.classList.toggle("open");
+
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+
+    menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+
+    menuButton.textContent = isOpen ? "×" : "☰";
+});
+```
